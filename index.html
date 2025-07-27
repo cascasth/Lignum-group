@@ -15,27 +15,37 @@
             padding: 0;
         }
         .masthead {
-            position: relative;
-            background-image: url('assets/img/home-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            color: white;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .masthead h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-        }
-        .masthead p {
-            font-size: 1.5rem;
-            max-width: 700px;
-            margin: 20px auto;
-        }
+    position: relative;
+    background-image: url('assets/img/home-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* mueve hacia abajo */
+    flex-direction: column;
+    padding-bottom: 120px; /* espacio entre búho y texto */
+}
+
+.masthead h1,
+.masthead p {
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6); /* sombra al texto */
+}
+
+.masthead h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.masthead p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
         .btn {
             margin: 10px;
             padding: 10px 20px;
@@ -56,7 +66,7 @@
         <p>En Lignum no solo damos cursos. Diseñamos contigo una ruta de transformación real con inteligencia artificial, estrategia visual y guía profesional.</p>
         <div>
             <a href="#servicios" class="btn btn-primary">Explora nuestros servicios</a>
-            <a href="#contacto" class="btn btn-outline-light">Habla con un experto</a>
+            <a href="hokoo.html" class="btn btn-primary">Habla con un experto</a>
         </div>
     </header>
     <section id="quienes-somos" style="padding: 80px 20px; background-color: #f2f4f8; text-align: center;">
