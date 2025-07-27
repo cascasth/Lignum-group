@@ -74,12 +74,19 @@
 
     <section>
         <h2 style="color: #1d3557;">Formulario por correo</h2>
-        <form action="https://formsubmit.co/educacion@lignum-group.com" method="POST">
-            <input type="text" name="name" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu correo" required>
-            <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar mensaje</button>
-        </form>
+        <form action="https://formspree.io/f/xldlndll" method="POST">
+  <label for="nombre">Tu nombre</label><br>
+  <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required><br><br>
+
+  <label for="email">Tu correo</label><br>
+  <input type="email" name="email" id="email" placeholder="Tu correo" required><br><br>
+
+  <label for="mensaje">Tu mensaje</label><br>
+  <textarea name="mensaje" id="mensaje" rows="5" placeholder="Tu mensaje" required></textarea><br><br>
+
+  <button type="submit">Enviar mensaje</button>
+</form>
+
 
         <h2 style="margin-top: 60px; color: #1d3557;">O contáctanos por WhatsApp</h2>
         <a href="https://wa.link/43rnpe" class="whatsapp-link" target="_blank">Enviar mensaje por WhatsApp</a>
