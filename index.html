@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://www.lignum-group.com/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
+<style>
   /* Scroll suave y que el título de Servicios no quede tapado por el menú */
   html { scroll-behavior: smooth; }
   #servicios { scroll-margin-top: 96px; }
@@ -23,7 +23,7 @@
   /* HERO / MASTHEAD */
   .masthead{
     position: relative;
-    background-image: url('assets/img/home-bg.jpg'); /* Cambia el nombre si tu archivo se llama distinto */
+    background-image: url('assets/img/home-bg.jpg'); /* Cambia el nombre si tu archivo es otro */
     background-size: cover;
     background-position: center;
     min-height: 92vh;
@@ -34,97 +34,40 @@
   .masthead::before{
     content:"";
     position:absolute; inset:0;
-    background: rgba(29,53,87,.45); /* velo oscuro para que el texto se lea */
+    background: rgba(29,53,87,.45); /* velo oscuro para legibilidad */
   }
   .masthead .content-wrapper{
-    position: relative; /* para que el overlay no tape el texto */
+    position: relative; /* para que el overlay no lo tape */
     max-width: 900px;
     margin: 0 auto 8vh;
     text-align: center;
     padding: 20px;
+    border-radius: 10px;
   }
   .masthead h1{
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 800;
     text-shadow: 2px 2px 8px rgba(0,0,0,.5);
     margin: 0;
   }
   .masthead p{
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin: 16px auto 28px;
     max-width: 980px;
     text-shadow: 1px 1px 6px rgba(0,0,0,.45);
   }
   .button-group{
-    display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+    margin-top: 30px;
   }
   .btn-primary { background-color:#007bff; border-color:#007bff; color:#fff; }
-  .btn-primary:hover { background-color:#0056b3; border-color:#004da0; }
+  .btn-primary:hover { background-color:#0056b3; border-color:#004d9a; transform: scale(1.03); }
 
   /* Footer iconos */
-  .social a { color:#1d3557
+  .social a { color:#1d3557; }
+  .social a:hover { opacity:.8; }
+</style>
 
-
-.masthead {
-  position: relative;
-  background-image: url('assets/img/home-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; /* baja el contenido */
-  padding-bottom: 100px;
-  text-align: center;
-  color: white;
-}
-
-.content-wrapper {
-  max-width: 900px;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.4); /* sombra detrás del texto */
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
-.masthead h1 {
-  font-size: 3.2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 8px #000;
-}
-
-.masthead p {
-  font-size: 1.3rem;
-  margin: 20px auto;
-  text-shadow: 1px 1px 6px #000;
-}
-
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border: 2px solid #007bff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004d9a;
-  transform: scale(1.05);
-}
-
-    </style>
 </head>
 <body>
 <nav style="background-color: #1d3557; padding: 10px 20px; text-align: right;">
