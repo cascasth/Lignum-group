@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayuda de Hok’óo – Lignum Group</title>
+
+  <link rel="canonical" href="https://www.lignum-group.com/ayuda.html">
+  <meta name="description" content="Resuelve tus dudas con Hok’óo: preguntas frecuentes, consejos y video guía.">
+  <meta property="og:title" content="Ayuda de Hok’óo – Lignum Group">
+  <meta property="og:description" content="FAQ, consejos prácticos y video para empezar con IA sin enredos.">
+  <meta property="og:url" content="https://www.lignum-group.com/ayuda.html">
+  <meta property="og:type" content="website">
+
+  <style>
+    body{font-family: 'Open Sans', system-ui, Arial, sans-serif; margin:0; color:#222; background:#fff;}
+    .hero{background:linear-gradient(0deg,rgba(29,53,87,.85),rgba(29,53,87,.85)),url('assets/img/home-bg.jpg') center/cover no-repeat; color:#fff; text-align:center; padding:72px 20px;}
+    .hero h1{margin:0 0 10px; font-size:2.2rem; font-weight:800}
+    .hero p{margin:0 auto; max-width:820px; opacity:.95}
+    .wrap{max-width:1000px; margin:0 auto; padding:40px 20px}
+    h2{color:#1d3557; margin:26px 0 12px}
+    ul{padding-left:18px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px}
+    .card{border:1px solid #e5e7eb; border-radius:12px; padding:18px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.04)}
+    .video{position:relative; padding-top:56.25%; border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.1)}
+    .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .btn{padding:12px 16px; border-radius:10px; font-weight:700; display:inline-block; text-decoration:none}
+    .btn-primary{background:#007bff; color:#fff}
+    .btn-outline{border:2px solid #007bff; color:#007bff}
+    .foot{ text-align:center; padding:32px 12px; color:#6b7280 }
+  </style>
+</head>
+<body>
+
+  <!-- NAV unificado -->
+  <nav style="background:#1d3557; padding:10px 20px; display:flex; align-items:center;">
+    <a href="/" style="color:#fff; font-weight:700; text-decoration:none;">Lignum Group</a>
+    <div style="margin-left:auto; display:flex; gap:18px;">
+      <a href="/#servicios" style="color:#fff; text-decoration:none;">Servicios</a>
+      <a href="cursos.html" style="color:#fff; text-decoration:none;">Cursos</a>
+      <a href="ayuda.html" style="color:#fff; text-decoration:none;">Ayuda de Hok’óo</a>
+      <a href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20necesito%20ayuda.&utm_source=web&utm_medium=nav&utm_campaign=whatsapp"
+         style="color:#fff; text-decoration:none;" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Hok’óo te ayuda</h1>
+    <p>Empieza con claridad. Aquí tienes respuestas rápidas, consejos prácticos y un video guía.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="cursos.html">Ver cursos</a>
+      <a class="btn btn-outline" href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20tengo%20una%20duda.&utm_source=web&utm_medium=ayuda_hero&utm_campaign=whatsapp" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Preguntas frecuentes</h2>
+      <ul>
+        <li>¿Qué curso me conviene si soy principiante en IA?</li>
+        <li>¿Puedo certificarme aunque no tenga experiencia previa?</li>
+        <li>¿Qué beneficios tiene automatizar procesos con IA?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Consejos de Hok’óo</h2>
+      <ul>
+        <li>No necesitas ser experto para empezar. Solo necesitas claridad.</li>
+        <li>Haz primero lo importante, no lo urgente.</li>
+        <li>La IA no reemplaza tu trabajo, potencia tu talento.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Video guía</h2>
+      <div class="video">
+        <!-- Reemplaza VIDEO_ID por el ID de tu video de YouTube -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" title="Introducción a ChatGPT" allowfullscreen></iframe>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href="cursos.html">Explorar cursos</a>
+        <a class="btn btn-outline" href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20vi%20el%20video%20y%20tengo%20dudas.&utm_source=web&utm_medium=ayuda_video&utm_campaign=whatsapp" target="_blank" rel="noopener">Tengo dudas</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="foot">
+    ¿No encontraste lo que buscabas? Escríbenos por <a href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20necesito%20ayuda.&utm_source=web&utm_medium=ayuda_footer&utm_campaign=whatsapp" target="_blank" rel="noopener">WhatsApp</a>.
+  </div>
+
+</body>
+</html>
