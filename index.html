@@ -82,6 +82,31 @@
     .social a { color:#1d3557; }
     .social a:hover { opacity:.8; }
   </style>
+  <style id="services-css">
+/* ---- Servicios: fondo + wave + hover ---- */
+.services-section{ 
+  position:relative; 
+  padding:90px 20px; 
+  background:
+    radial-gradient(1200px 600px at 50% -250px, #eaf2ff 0%, transparent 70%),
+    #ffffff;
+}
+.service-card{
+  border:1px solid #e8eef6;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(13,38,76,.06);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.service-card:hover{ 
+  transform:translateY(-4px); 
+  box-shadow:0 18px 36px rgba(13,38,76,.12);
+}
+/* Onda inferior que conecta con la siguiente sección (#f2f4f8) */
+.services-wave{ position:absolute; left:0; bottom:-1px; width:100%; height:80px; line-height:0; }
+.services-wave svg{ display:block; width:calc(100% + 1px); height:80px; }
+.services-wave .shape-fill{ fill:#f2f4f8; }  /* color de la sección siguiente */
+</style>
+
 </head>
 
 <body>
@@ -114,15 +139,72 @@
   </header>
 
   <!-- QUIÉNES SOMOS -->
-  <section id="quienes-somos" style="padding:80px 20px; background-color:#f2f4f8; text-align:center;">
-    <div class="container">
-      <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">Guiamos con conocimiento, no con promesas.</h2>
-      <p style="max-width:800px; margin:40px auto 0; font-size:1.2rem; color:#333;">
-        Somos una consultora que fusiona <strong>inteligencia artificial</strong> con <strong>habilidades humanas</strong>.<br>
-        Nuestro propósito es ayudarte a avanzar en serio, sin adivinar, sin sentirte solo.
-      </p>
+<section id="servicios" class="services-section">
+  <div class="container text-center">
+    <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">Nuestros Servicios</h2>
+    <p style="font-size:1.2rem; color:#444; max-width:800px; margin:20px auto 40px;">
+      Integramos inteligencia artificial, estrategia visual y desarrollo humano para ayudarte a evolucionar de verdad.
+    </p>
+
+    <div class="row">
+      <!-- A) Formación y Desarrollo -->
+      <div class="col-md-4 mb-4">
+        <div class="service-card">
+          <h4>🧠 Formación y Desarrollo</h4>
+          <ul>
+            <li>ChatGPT (adultos, empresas, niños)</li>
+            <li>Ingeniería de Prompts</li>
+            <li>IA en finanzas</li>
+            <li>Habilidades blandas</li>
+            <li>Educación financiera</li>
+          </ul>
+          <div class="card-actions">
+            <a href="cursos.html" class="btn btn-primary">Saber más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- B) Estrategia Visual con IA -->
+      <div class="col-md-4 mb-4">
+        <div class="service-card">
+          <h4>🎥 Estrategia Visual con IA</h4>
+          <ul>
+            <li>Videos con avatares</li>
+            <li>Onboarding digital</li>
+            <li>Avatares interactivos</li>
+          </ul>
+          <div class="card-actions">
+            <a href="estrategia-visual.html" class="btn btn-primary">Ver ejemplos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- C) Análisis en Atención al Cliente -->
+      <div class="col-md-4 mb-4">
+        <div class="service-card">
+          <h4>🤖 Análisis en Atención al Cliente</h4>
+          <ul>
+            <li>Análisis de conversaciones</li>
+            <li>Chatbots internos</li>
+            <li>Prevención de cancelaciones</li>
+            <li>Reducción de errores</li>
+          </ul>
+          <div class="card-actions">
+            <a href="analisis-atencion.html" class="btn btn-primary">Conocer</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Onda decorativa que “engancha” con la sección de abajo -->
+  <div class="services-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.71,22,98.7,29.05,146.39,13.88C230,36,284.2-1.8,339.76,1.58c54.16,3.29,98.75,41.27,152.92,52.49C590,67.09,647,55.07,698.81,34.46c49.87-19.54,85.8-40.52,133.93-33.33,65,9.86,136.33,57.08,191.65,80.17,60.21,25.06,117.61,30.68,175.61,21.88V0Z" class="shape-fill"></path>
+    </svg>
+  </div>
+</section>
+
 
   <!-- SERVICIOS -->
   <section id="servicios" style="padding:80px 20px; background-color:#ffffff;">
