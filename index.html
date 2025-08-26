@@ -1,313 +1,264 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lignum Group</title>
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet" type="text/css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="canonical" href="https://www.lignum-group.com/">
-<meta name="description" content="Integramos IA, estrategia visual y desarrollo humano para que tu carrera avance de verdad.">
-<meta property="og:title" content="Lignum Group">
-<meta property="og:description" content="Tu carrera merece avanzar. IA + estrategia visual + guía profesional.">
-<meta property="og:url" content="https://www.lignum-group.com/">
-<meta property="og:type" content="website">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
-  /* Scroll suave y que el título de Servicios no quede tapado por el menú */
-  html { scroll-behavior: smooth; }
-  #servicios { scroll-margin-top: 96px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lignum Group</title>
 
-  /* HERO / MASTHEAD */
-  .masthead{
-    position: relative;
-    background-image: url('assets/img/home-bg.jpg'); /* Cambia el nombre si tu archivo es otro */
-    background-size: cover;
-    background-position: center;
-    min-height: 92vh;
-    display: flex;
-    align-items: flex-end;
-    color: #fff;
-  }
-  .masthead::before{
-    content:"";
-    position:absolute; inset:0;
-    background: rgba(29,53,87,.45); /* velo oscuro para legibilidad */
-  }
-  .masthead .content-wrapper{
-    position: relative; /* para que el overlay no lo tape */
-    max-width: 900px;
-    margin: 0 auto 8vh;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  .masthead h1{
-    font-size: 3.2rem;
-    font-weight: 800;
-    text-shadow: 2px 2px 8px rgba(0,0,0,.5);
-    margin: 0;
-  }
-  .masthead p{
-    font-size: 1.25rem;
-    margin: 16px auto 28px;
-    max-width: 980px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,.45);
-  }
-  .button-group{
-    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
-    margin-top: 30px;
-  }
-  .btn-primary { background-color:#007bff; border-color:#007bff; color:#fff; }
-  .btn-primary:hover { background-color:#0056b3; border-color:#004d9a; transform: scale(1.03); }
+  <!-- Fuentes y CSS base -->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet" type="text/css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-  /* Footer iconos */
-  .social a { color:#1d3557; }
-  .social a:hover { opacity:.8; }
-/* Tarjetas de "Nuestros Servicios" */
-.service-card{
-  border:1px solid #eee; padding:20px; border-radius:12px;
-  display:flex; flex-direction:column; height:100%;
-}
-.service-card ul{ margin:0 0 12px 0; }
-.service-card .card-actions{ margin-top:auto; }
-.service-card .btn{ display:inline-block; margin-top:8px; }
+  <!-- SEO -->
+  <link rel="canonical" href="https://www.lignum-group.com/">
+  <meta name="description" content="Integramos IA, estrategia visual y desarrollo humano para que tu carrera avance de verdad.">
+  <meta property="og:title" content="Lignum Group">
+  <meta property="og:description" content="Tu carrera merece avanzar. IA + estrategia visual + guía profesional.">
+  <meta property="og:url" content="https://www.lignum-group.com/">
+  <meta property="og:type" content="website">
 
-</style>
+  <style>
+    /* Scroll suave y que Servicios no quede tapado por el menú */
+    html { scroll-behavior: smooth; }
+    #servicios { scroll-margin-top: 96px; }
 
+    /* HERO / MASTHEAD */
+    .masthead{
+      position: relative;
+      background-image: url('assets/img/home-bg.jpg'); /* cambia si tu imagen tiene otro nombre */
+      background-size: cover;
+      background-position: center;
+      min-height: 92vh;
+      display: flex;
+      align-items: flex-end;
+      color: #fff;
+    }
+    .masthead::before{
+      content:""; position:absolute; inset:0; background: rgba(29,53,87,.45);
+    }
+    .masthead .content-wrapper{
+      position: relative; max-width: 900px; margin: 0 auto 8vh; text-align: center; padding: 20px; border-radius: 10px;
+    }
+    .masthead h1{ font-size: 3.2rem; font-weight: 800; text-shadow: 2px 2px 8px rgba(0,0,0,.5); margin: 0; }
+    .masthead p{ font-size: 1.25rem; margin: 16px auto 28px; max-width: 980px; text-shadow: 1px 1px 6px rgba(0,0,0,.45); }
+    .button-group{ display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:30px; }
+    .btn-primary { background-color:#007bff; border-color:#007bff; color:#fff; }
+    .btn-primary:hover { background-color:#0056b3; border-color:#004d9a; transform: scale(1.03); }
+
+    /* Cards de “Nuestros Servicios” */
+    .service-card{
+      border:1px solid #eee; border-radius:12px; padding:20px;
+      height:100%; display:flex; flex-direction:column; text-align:left;
+    }
+    .service-card h4{ margin:0 0 8px; font-weight:700; }
+    .service-card ul{ margin:0 0 12px 0; padding-left:18px; }
+    .service-card .card-actions{ margin-top:auto; }
+    .service-card .btn{ display:inline-block; margin-top:8px; }
+
+    /* Footer iconos */
+    .social a { color:#1d3557; }
+    .social a:hover { opacity:.8; }
+  </style>
 </head>
+
 <body>
-<nav style="background:#1d3557; padding:10px 20px; display:flex; align-items:center;">
-  <a href="/" style="color:#fff; font-weight:700; text-decoration:none;">Lignum Group</a>
-  <div style="margin-left:auto; display:flex; gap:18px;">
-    <a href="/#servicios" style="color:#fff; text-decoration:none;">Servicios</a>
-    <a href="cursos.html" style="color:#fff; text-decoration:none;">Cursos</a>
-    <a href="ayuda.html" style="color:#fff; text-decoration:none;">Ayuda de Hok’óo</a>
-    <a href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20necesito%20ayuda.&utm_source=web&utm_medium=nav&utm_campaign=whatsapp"
-       style="color:#fff; text-decoration:none;" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-</nav>
-
-    <header class="masthead">
-  <div class="content-wrapper">
-    <h1>Tu carrera merece avanzar.</h1>
-    <p>En Lignum no solo damos cursos. Diseñamos contigo una ruta de transformación real con inteligencia artificial, estrategia visual y guía profesional.</p>
-<div class="button-group">
-  <a href="#servicios" class="btn btn-primary">Explora nuestros servicios</a>
-
-  <a class="btn btn-primary"
-     href="https://api.whatsapp.com/send?phone=5215543518336&text=Hola%20Lignum%2C%20quiero%20hablar%20con%20un%20experto%20sobre%20_____%20(vi%20la%20web).&utm_source=web&utm_medium=hero&utm_campaign=cta_whatsapp"
-     target="_blank" rel="noopener">
-    Habla con un experto
-  </a>
-</div>
-
-</header>
-
-    <section id="quienes-somos" style="padding: 80px 20px; background-color: #f2f4f8; text-align: center;">
-  <div class="container">
-    <h2 style="font-size: 2.5rem; color: #1d3557; font-weight: bold;">Guiamos con conocimiento, no con promesas.</h2>
-    <p style="max-width: 800px; margin: 40px auto 0; font-size: 1.2rem; color: #333;">
-      Somos una consultora que fusiona <strong>inteligencia artificial</strong> con <strong>habilidades humanas</strong>.<br>
-      Nuestro propósito es ayudarte a avanzar en serio, sin adivinar, sin sentirte solo.
-    </p>
-    <!-- Puedes insertar aquí una imagen o ilustración -->
-    <!-- <img src="assets/img/puerta-buho.jpg" alt="Búho frente a la puerta" style="margin-top: 40px; max-width: 100%; border-radius: 12px;"> -->
-  </div>
-</section>
-<section id="servicios" style="padding: 80px 20px; background-color: #ffffff;">
-  <div class="container text-center">
-    <h2 style="font-size: 2.5rem; color: #1d3557; font-weight: bold;">Nuestros Servicios</h2>
-    <p style="font-size: 1.2rem; color: #444; max-width: 800px; margin: 20px auto 40px;">
-      Integramos inteligencia artificial, estrategia visual y desarrollo humano para ayudarte a evolucionar de verdad.
-    </p>
-
-    <div class="row">
-      <!-- Bloque 1 -->
-      <div class="col-md-4 mb-4">
-       <div class="col-md-4 mb-4">
-  <div class="service-card">
-    <h4>🧠 Formación y Desarrollo</h4>
-    <ul style="text-align:left;">
-      <li>ChatGPT (adultos, empresas, niños)</li>
-      <li>Ingeniería de Prompts</li>
-      <li>IA en finanzas</li>
-      <li>Habilidades blandas</li>
-      <li>Educación financiera</li>
-    </ul>
-    <div class="card-actions">
-      <a href="cursos.html" class="btn btn-primary">Saber más</a>
+  <!-- NAV -->
+  <nav style="background:#1d3557; padding:10px 20px; display:flex; align-items:center;">
+    <a href="/" style="color:#fff; font-weight:700; text-decoration:none;">Lignum Group</a>
+    <div style="margin-left:auto; display:flex; gap:18px;">
+      <a href="/#servicios" style="color:#fff; text-decoration:none;">Servicios</a>
+      <a href="cursos.html" style="color:#fff; text-decoration:none;">Cursos</a>
+      <a href="ayuda.html" style="color:#fff; text-decoration:none;">Ayuda de Hok’óo</a>
+      <a href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20necesito%20ayuda.&utm_source=web&utm_medium=nav&utm_campaign=whatsapp"
+         style="color:#fff; text-decoration:none;" target="_blank" rel="noopener">WhatsApp</a>
     </div>
-  </div>
-</div>
+  </nav>
 
-            <a href="cursos.html" class="btn btn-primary" style="margin-top:12px;">Saber más</a>
-          <h4>🧠 Formación y Desarrollo</h4>
-          <ul style="text-align: left;">
-            <li>ChatGPT (adultos, empresas, niños)</li>
-            <li>Ingeniería de Prompts</li>
-            <li>IA en finanzas</li>
-            <li>Habilidades blandas</li>
-            <li>Educación financiera</li>
-          </ul>
-        </div>
+  <!-- HERO -->
+  <header class="masthead">
+    <div class="content-wrapper">
+      <h1>Tu carrera merece avanzar.</h1>
+      <p>En Lignum no solo damos cursos. Diseñamos contigo una ruta de transformación real con inteligencia artificial, estrategia visual y guía profesional.</p>
+      <div class="button-group">
+        <a href="#servicios" class="btn btn-primary">Explora nuestros servicios</a>
+        <a class="btn btn-primary"
+           href="https://api.whatsapp.com/send?phone=5215543518336&text=Hola%20Lignum%2C%20quiero%20hablar%20con%20un%20experto%20sobre%20_____%20(vi%20la%20web).&utm_source=web&utm_medium=hero&utm_campaign=cta_whatsapp"
+           target="_blank" rel="noopener">
+          Habla con un experto
+        </a>
       </div>
+    </div>
+  </header>
 
-      <!-- Bloque 2 -->
-      <div class="col-md-4 mb-4">
+  <!-- QUIÉNES SOMOS -->
+  <section id="quienes-somos" style="padding:80px 20px; background-color:#f2f4f8; text-align:center;">
+    <div class="container">
+      <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">Guiamos con conocimiento, no con promesas.</h2>
+      <p style="max-width:800px; margin:40px auto 0; font-size:1.2rem; color:#333;">
+        Somos una consultora que fusiona <strong>inteligencia artificial</strong> con <strong>habilidades humanas</strong>.<br>
+        Nuestro propósito es ayudarte a avanzar en serio, sin adivinar, sin sentirte solo.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" style="padding:80px 20px; background-color:#ffffff;">
+    <div class="container text-center">
+      <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">Nuestros Servicios</h2>
+      <p style="font-size:1.2rem; color:#444; max-width:800px; margin:20px auto 40px;">
+        Integramos inteligencia artificial, estrategia visual y desarrollo humano para ayudarte a evolucionar de verdad.
+      </p>
+
+      <div class="row">
+        <!-- A) Formación y Desarrollo -->
         <div class="col-md-4 mb-4">
-  <div class="service-card">
-    <h4>🎥 Estrategia Visual con IA</h4>
-    <ul style="text-align:left;">
-      <li>Videos con avatares</li>
-      <li>Onboarding digital</li>
-      <li>Avatares interactivos</li>
-    </ul>
-    <div class="card-actions">
-      <a href="estrategia-visual.html" class="btn btn-primary">Ver ejemplos</a>
-    </div>
-  </div>
-</div>
+          <div class="service-card">
+            <h4>🧠 Formación y Desarrollo</h4>
+            <ul>
+              <li>ChatGPT (adultos, empresas, niños)</li>
+              <li>Ingeniería de Prompts</li>
+              <li>IA en finanzas</li>
+              <li>Habilidades blandas</li>
+              <li>Educación financiera</li>
+            </ul>
+            <div class="card-actions">
+              <a href="cursos.html" class="btn btn-primary">Saber más</a>
+            </div>
+          </div>
+        </div>
 
-<a href="estrategia-visual.html" class="btn btn-primary" style="margin-top:12px;">Ver ejemplos</a>
+        <!-- B) Estrategia Visual con IA -->
+        <div class="col-md-4 mb-4">
+          <div class="service-card">
             <h4>🎥 Estrategia Visual con IA</h4>
-          <ul style="text-align: left;">
-            <li>Videos con avatares</li>
-            <li>Onboarding digital</li>
-            <li>Avatares interactivos</li>
-          </ul>
+            <ul>
+              <li>Videos con avatares</li>
+              <li>Onboarding digital</li>
+              <li>Avatares interactivos</li>
+            </ul>
+            <div class="card-actions">
+              <a href="estrategia-visual.html" class="btn btn-primary">Ver ejemplos</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- C) Análisis en Atención al Cliente -->
+        <div class="col-md-4 mb-4">
+          <div class="service-card">
+            <h4>🤖 Análisis en Atención al Cliente</h4>
+            <ul>
+              <li>Análisis de conversaciones</li>
+              <li>Chatbots internos</li>
+              <li>Prevención de cancelaciones</li>
+              <li>Reducción de errores</li>
+            </ul>
+            <div class="card-actions">
+              <a href="analisis-atencion.html" class="btn btn-primary">Conocer</a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Bloque 3 -->
-      <div class="col-md-4 mb-4">
-       <div class="col-md-4 mb-4">
-  <div class="service-card">
-    <h4>🤖 Análisis en Atención al Cliente</h4>
-    <ul style="text-align:left;">
-      <li>Análisis de conversaciones</li>
-      <li>Chatbots internos</li>
-      <li>Prevención de cancelaciones</li>
-      <li>Reducción de errores</li>
-    </ul>
-    <div class="card-actions">
-      <a href="analisis-atencion.html" class="btn btn-primary">Conocer</a>
     </div>
-  </div>
-</div>
+  </section>
 
-<a href="analisis-atencion.html" class="btn btn-primary" style="margin-top:12px;">Conocer</a>
-            <h4>🤖 Análisis en Atención al Cliente </h4>
-          <ul style="text-align: left;">
-            <li>Análisis de conversaciones</li>
-            <li>Chatbots internos</li>
-            <li>Prevención de cancelaciones</li>
-            <li>Reducción de errores</li>
-          </ul>
-        </div>
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section id="porque-elegirnos" style="padding:80px 20px; background-color:#f2f4f8;">
+    <div class="container text-center">
+      <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">¿Por qué elegirnos?</h2>
+      <ul style="list-style:none; padding:0; font-size:1.2rem; max-width:800px; margin:40px auto; color:#333;">
+        <li style="margin-bottom:15px;">✅ Más de 15 cursos activos y en constante evolución</li>
+        <li style="margin-bottom:15px;">✅ Aplicación real de IA en formación y mejora operativa</li>
+        <li style="margin-bottom:15px;">✅ Consultoría personalizada y acompañamiento ético</li>
+        <li style="margin-bottom:15px;">✅ Soluciones aplicables, sin adivinanzas</li>
+      </ul>
+      <p style="font-size:1.3rem; font-style:italic; color:#1d3557;">
+        “Tu camino profesional no se improvisa. Se diseña.”
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" style="padding:80px 20px; background-color:#ffffff;">
+    <div class="container text-center">
+      <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">Testimonios</h2>
+      <p style="font-size:1.2rem; color:#444; max-width:800px; margin:20px auto 40px;">
+        Las palabras de quienes ya abrieron su puerta al cambio.
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:40px; align-items:center;">
+        <blockquote style="font-style:italic; max-width:700px; font-size:1.2rem; color:#333;">
+          🗣️ “Pasé de sentirme perdido a lograr un ascenso con Lignum.”<br>
+          <strong>— Elena, coordinadora de proyectos</strong>
+        </blockquote>
+        <blockquote style="font-style:italic; max-width:700px; font-size:1.2rem; color:#333;">
+          🗣️ “El curso de prompts cambió completamente cómo uso IA.”<br>
+          <strong>— Víctor, diseñador digital</strong>
+        </blockquote>
       </div>
     </div>
-  </div>
-</section>
-<section id="porque-elegirnos" style="padding: 80px 20px; background-color: #f2f4f8;">
-  <div class="container text-center">
-    <h2 style="font-size: 2.5rem; color: #1d3557; font-weight: bold;">¿Por qué elegirnos?</h2>
-    
-    <ul style="list-style: none; padding: 0; font-size: 1.2rem; max-width: 800px; margin: 40px auto; color: #333;">
-      <li style="margin-bottom: 15px;">✅ Más de 15 cursos activos y en constante evolución</li>
-      <li style="margin-bottom: 15px;">✅ Aplicación real de IA en formación y mejora operativa</li>
-      <li style="margin-bottom: 15px;">✅ Consultoría personalizada y acompañamiento ético</li>
-      <li style="margin-bottom: 15px;">✅ Soluciones aplicables, sin adivinanzas</li>
-    </ul>
+  </section>
 
-    <p style="font-size: 1.3rem; font-style: italic; color: #1d3557;">
-      “Tu camino profesional no se improvisa. Se diseña.”
-    </p>
-  </div>
-</section>
-<section id="testimonios" style="padding: 80px 20px; background-color: #ffffff;">
-  <div class="container text-center">
-    <h2 style="font-size: 2.5rem; color: #1d3557; font-weight: bold;">Testimonios</h2>
-    <p style="font-size: 1.2rem; color: #444; max-width: 800px; margin: 20px auto 40px;">
-      Las palabras de quienes ya abrieron su puerta al cambio.
-    </p>
+  <!-- CTA FINAL -->
+  <section id="cta-final" style="padding:80px 20px; background-color:#1d3557; color:white; text-align:center;">
+    <div class="container">
+      <h2 style="font-size:2.5rem; margin-bottom:20px;">¿Estás listo para avanzar?</h2>
+      <p style="font-size:1.4rem; font-style:italic; margin-bottom:40px;">✨ Lignum te da la llave.</p>
 
-    <div style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
-      <blockquote style="font-style: italic; max-width: 700px; font-size: 1.2rem; color: #333;">
-        🗣️ “Pasé de sentirme perdido a lograr un ascenso con Lignum.”<br>
-        <strong>— Elena, coordinadora de proyectos</strong>
-      </blockquote>
+      <div style="margin:40px auto; text-align:center;">
+        <img src="hokoo puerta.png" alt="Hokóo dando la llave" style="max-width:90%; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.3);">
+      </div>
 
-      <blockquote style="font-style: italic; max-width: 700px; font-size: 1.2rem; color: #333;">
-        🗣️ “El curso de prompts cambió completamente cómo uso IA.”<br>
-        <strong>— Víctor, diseñador digital</strong>
-      </blockquote>
+      <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+        <a href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20quiero%20contacto%20(vi%20la%20web).&utm_source=web&utm_medium=cta_final&utm_campaign=whatsapp_contacto"
+           class="btn btn-light"
+           style="padding:12px 24px; font-weight:bold; background-color:white; color:#1d3557; border-radius:8px; text-decoration:none;"
+           target="_blank" rel="noopener">Contáctanos</a>
+
+        <a href="cursos.html" class="btn btn-outline-light"
+           style="padding:12px 24px; font-weight:bold; border:2px solid white; color:white; border-radius:8px; text-decoration:none;">
+           Explora cursos
+        </a>
+
+        <a href="https://wa.link/43rnpe" class="btn btn-success"
+           style="padding:12px 24px; font-weight:bold; background-color:#25D366; color:white; border-radius:8px; text-decoration:none;"
+           target="_blank" rel="noopener">Agendar asesoría</a>
+      </div>
     </div>
-  </div>
-</section>
-<section id="cta-final" style="padding: 80px 20px; background-color: #1d3557; color: white; text-align: center;">
-  <div class="container">
-    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">¿Estás listo para avanzar?</h2>
-    <p style="font-size: 1.4rem; font-style: italic; margin-bottom: 40px;">✨ Lignum te da la llave.</p>
+  </section>
 
- <div style="margin: 40px auto; text-align: center;">
-  <img src="hokoo puerta.png" alt="Hokóo dando la llave" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-</div>
+  <!-- FOOTER -->
+  <footer class="text-center py-4">
+    <p class="mb-2">Síguenos y escríbenos:</p>
+    <div class="social d-flex justify-content-center align-items-center">
+      <!-- Instagram -->
+      <a class="mx-3" href="https://www.instagram.com/lignumgroup/" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <!-- WhatsApp -->
+      <a class="mx-3" href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20vengo%20de%20la%20web%20y%20quiero%20informes.&utm_source=web&utm_medium=footer&utm_campaign=whatsapp_footer"
+         target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp fa-lg"></i>
+      </a>
+      <!-- Facebook -->
+      <a class="mx-3" href="https://www.facebook.com/Lignumgroupmx" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <!-- LinkedIn -->
+      <a class="mx-3" href="https://www.linkedin.com/company/lignum-groupmx/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+      <!-- Email educación -->
+      <a class="mx-3" href="mailto:educacion@lignum-group.com?subject=Contacto%20desde%20la%20web" aria-label="Email educación">
+        <i class="fas fa-envelope fa-lg"></i>
+      </a>
+      <!-- Email proyectos -->
+      <a class="mx-3" href="mailto:proyectos@lignum-group.com?subject=Proyectos%20-%20Contacto%20desde%20la%20web" aria-label="Email proyectos">
+        <i class="fas fa-envelope-open fa-lg"></i>
+      </a>
     </div>
-
-    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-  <a href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20quiero%20contacto%20(vi%20la%20web).&utm_source=web&utm_medium=cta_final&utm_campaign=whatsapp_contacto"
-     class="btn btn-light"
-     style="padding: 12px 24px; font-weight: bold; background-color: white; color: #1d3557; border-radius: 8px; text-decoration: none;"
-     target="_blank" rel="noopener">
-     Contáctanos
-  </a>
-
-  <a href="cursos.html" class="btn btn-outline-light" style="padding: 12px 24px; font-weight: bold; border: 2px solid white; color: white; border-radius: 8px; text-decoration: none;">
-  Explora cursos
-</a>
-
-
-  <a href="https://wa.link/43rnpe"
-     class="btn btn-success"
-     style="padding: 12px 24px; font-weight: bold; background-color: #25D366; color: white; border-radius: 8px; text-decoration: none;"
-     target="_blank" rel="noopener">
-     Agendar asesoría
-  </a>
-</div>
-
-    </div>
-  </div>
-</section>
-<footer class="text-center py-4">
-  <p class="mb-2">Síguenos y escríbenos:</p>
-  <div class="social d-flex justify-content-center align-items-center">
-    <!-- Instagram -->
-    <a class="mx-3"
-       href="https://www.instagram.com/lignumgroup/"
-       target="_blank" rel="noopener" aria-label="Instagram">
-      <i class="fab fa-instagram fa-lg"></i>
-    </a>
-    <!-- WhatsApp -->
-    <a class="mx-3"
-       href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20vengo%20de%20la%20web%20y%20quiero%20informes.&utm_source=web&utm_medium=footer&utm_campaign=whatsapp_footer"
-       target="_blank" rel="noopener" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp fa-lg"></i>
-    </a>
-
-    <!-- Guarda estos para luego, cuando me pases las URLs reales -->
-    <!--
-    <a class="mx-3" href="https://www.facebook.com/TU-PAGINA" target="_blank" rel="noopener" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg"></i>
-    </a>
-    <a class="mx-3" href="https://www.linkedin.com/company/TU-PAGINA" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <i class="fab fa-linkedin fa-lg"></i>
-    </a>
-    -->
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
