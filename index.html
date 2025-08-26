@@ -66,6 +66,15 @@
   /* Footer iconos */
   .social a { color:#1d3557; }
   .social a:hover { opacity:.8; }
+/* Tarjetas de "Nuestros Servicios" */
+.service-card{
+  border:1px solid #eee; padding:20px; border-radius:12px;
+  display:flex; flex-direction:column; height:100%;
+}
+.service-card ul{ margin:0 0 12px 0; }
+.service-card .card-actions{ margin-top:auto; }
+.service-card .btn{ display:inline-block; margin-top:8px; }
+
 </style>
 
 </head>
@@ -118,7 +127,22 @@
     <div class="row">
       <!-- Bloque 1 -->
       <div class="col-md-4 mb-4">
-        <div style="border: 1px solid #eee; padding: 20px; border-radius: 12px;">
+       <div class="col-md-4 mb-4">
+  <div class="service-card">
+    <h4>🧠 Formación y Desarrollo</h4>
+    <ul style="text-align:left;">
+      <li>ChatGPT (adultos, empresas, niños)</li>
+      <li>Ingeniería de Prompts</li>
+      <li>IA en finanzas</li>
+      <li>Habilidades blandas</li>
+      <li>Educación financiera</li>
+    </ul>
+    <div class="card-actions">
+      <a href="cursos.html" class="btn btn-primary">Saber más</a>
+    </div>
+  </div>
+</div>
+
             <a href="cursos.html" class="btn btn-primary" style="margin-top:12px;">Saber más</a>
           <h4>🧠 Formación y Desarrollo</h4>
           <ul style="text-align: left;">
@@ -133,7 +157,20 @@
 
       <!-- Bloque 2 -->
       <div class="col-md-4 mb-4">
-        <div style="border: 1px solid #eee; padding: 20px; border-radius: 12px;">
+        <div class="col-md-4 mb-4">
+  <div class="service-card">
+    <h4>🎥 Estrategia Visual con IA</h4>
+    <ul style="text-align:left;">
+      <li>Videos con avatares</li>
+      <li>Onboarding digital</li>
+      <li>Avatares interactivos</li>
+    </ul>
+    <div class="card-actions">
+      <a href="estrategia-visual.html" class="btn btn-primary">Ver ejemplos</a>
+    </div>
+  </div>
+</div>
+
 <a href="estrategia-visual.html" class="btn btn-primary" style="margin-top:12px;">Ver ejemplos</a>
             <h4>🎥 Estrategia Visual con IA</h4>
           <ul style="text-align: left;">
@@ -146,7 +183,21 @@
 
       <!-- Bloque 3 -->
       <div class="col-md-4 mb-4">
-        <div style="border: 1px solid #eee; padding: 20px; border-radius: 12px;">
+       <div class="col-md-4 mb-4">
+  <div class="service-card">
+    <h4>🤖 Análisis en Atención al Cliente</h4>
+    <ul style="text-align:left;">
+      <li>Análisis de conversaciones</li>
+      <li>Chatbots internos</li>
+      <li>Prevención de cancelaciones</li>
+      <li>Reducción de errores</li>
+    </ul>
+    <div class="card-actions">
+      <a href="analisis-atencion.html" class="btn btn-primary">Conocer</a>
+    </div>
+  </div>
+</div>
+
 <a href="analisis-atencion.html" class="btn btn-primary" style="margin-top:12px;">Conocer</a>
             <h4>🤖 Análisis en Atención al Cliente </h4>
           <ul style="text-align: left;">
