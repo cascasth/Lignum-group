@@ -18,37 +18,16 @@
   <meta property="og:description" content="Tu carrera merece avanzar. IA + estrategia visual + guía profesional.">
   <meta property="og:url" content="https://www.lignum-group.com/">
   <meta property="og:type" content="website">
-/* Servicios: fondo + wave + hover */
-.services-section{ 
-  position:relative; 
-  padding:90px 20px; 
-  background:
-    radial-gradient(1200px 600px at 50% -250px, #eaf2ff 0%, transparent 70%),
-    #ffffff;
-}
-.service-card{
-  border:1px solid #e8eef6;
-  box-shadow:0 6px 18px rgba(13,38,76,.06);
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.service-card:hover{ 
-  transform:translateY(-4px); 
-  box-shadow:0 18px 36px rgba(13,38,76,.12);
-}
-/* Onda inferior que conecta con la siguiente sección (#f2f4f8) */
-.services-wave{ position:absolute; left:0; bottom:-1px; width:100%; height:80px; line-height:0; }
-.services-wave svg{ display:block; width:calc(100% + 1px); height:80px; }
-.services-wave .shape-fill{ fill:#f2f4f8; }  /* color de la siguiente sección */
 
   <style>
-    /* Scroll suave y que Servicios no quede tapado por el menú */
+    /* ===== Global ===== */
     html { scroll-behavior: smooth; }
     #servicios { scroll-margin-top: 96px; }
 
-    /* HERO / MASTHEAD */
+    /* ===== HERO / MASTHEAD ===== */
     .masthead{
       position: relative;
-      background-image: url('assets/img/home-bg.jpg'); /* cambia si tu imagen tiene otro nombre */
+      background-image: url('assets/img/home-bg.jpg');
       background-size: cover;
       background-position: center;
       min-height: 92vh;
@@ -56,11 +35,10 @@
       align-items: flex-end;
       color: #fff;
     }
-    .masthead::before{
-      content:""; position:absolute; inset:0; background: rgba(29,53,87,.45);
-    }
+    .masthead::before{ content:""; position:absolute; inset:0; background: rgba(29,53,87,.45); }
     .masthead .content-wrapper{
-      position: relative; max-width: 900px; margin: 0 auto 8vh; text-align: center; padding: 20px; border-radius: 10px;
+      position: relative; max-width: 900px; margin: 0 auto 8vh;
+      text-align: center; padding: 20px; border-radius: 10px;
     }
     .masthead h1{ font-size: 3.2rem; font-weight: 800; text-shadow: 2px 2px 8px rgba(0,0,0,.5); margin: 0; }
     .masthead p{ font-size: 1.25rem; margin: 16px auto 28px; max-width: 980px; text-shadow: 1px 1px 6px rgba(0,0,0,.45); }
@@ -68,45 +46,34 @@
     .btn-primary { background-color:#007bff; border-color:#007bff; color:#fff; }
     .btn-primary:hover { background-color:#0056b3; border-color:#004d9a; transform: scale(1.03); }
 
-    /* Cards de “Nuestros Servicios” */
-    .service-card{
-      border:1px solid #eee; border-radius:12px; padding:20px;
-      height:100%; display:flex; flex-direction:column; text-align:left;
+    /* ===== Servicios: fondo + wave + cards ===== */
+    .services-section{
+      position:relative;
+      padding:90px 20px;
+      background:
+        radial-gradient(1200px 600px at 50% -250px, #eaf2ff 0%, transparent 70%),
+        #ffffff;
     }
+    .service-card{
+      border:1px solid #e8eef6; border-radius:12px; padding:20px;
+      height:100%; display:flex; flex-direction:column; text-align:left;
+      box-shadow:0 6px 18px rgba(13,38,76,.06);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .service-card:hover{ transform:translateY(-4px); box-shadow:0 18px 36px rgba(13,38,76,.12); }
     .service-card h4{ margin:0 0 8px; font-weight:700; }
     .service-card ul{ margin:0 0 12px 0; padding-left:18px; }
     .service-card .card-actions{ margin-top:auto; }
     .service-card .btn{ display:inline-block; margin-top:8px; }
+    /* onda inferior que se empata con la siguiente sección (#f2f4f8) */
+    .services-wave{ position:absolute; left:0; bottom:-1px; width:100%; height:80px; line-height:0; }
+    .services-wave svg{ display:block; width:calc(100% + 1px); height:80px; }
+    .services-wave .shape-fill{ fill:#f2f4f8; }
 
-    /* Footer iconos */
+    /* ===== Footer iconos ===== */
     .social a { color:#1d3557; }
     .social a:hover { opacity:.8; }
   </style>
-  <style id="services-css">
-/* ---- Servicios: fondo + wave + hover ---- */
-.services-section{ 
-  position:relative; 
-  padding:90px 20px; 
-  background:
-    radial-gradient(1200px 600px at 50% -250px, #eaf2ff 0%, transparent 70%),
-    #ffffff;
-}
-.service-card{
-  border:1px solid #e8eef6;
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(13,38,76,.06);
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.service-card:hover{ 
-  transform:translateY(-4px); 
-  box-shadow:0 18px 36px rgba(13,38,76,.12);
-}
-/* Onda inferior que conecta con la siguiente sección (#f2f4f8) */
-.services-wave{ position:absolute; left:0; bottom:-1px; width:100%; height:80px; line-height:0; }
-.services-wave svg{ display:block; width:calc(100% + 1px); height:80px; }
-.services-wave .shape-fill{ fill:#f2f4f8; }  /* color de la sección siguiente */
-</style>
-
 </head>
 
 <body>
@@ -131,83 +98,24 @@
         <a href="#servicios" class="btn btn-primary">Explora nuestros servicios</a>
         <a class="btn btn-primary"
            href="https://api.whatsapp.com/send?phone=5215543518336&text=Hola%20Lignum%2C%20quiero%20hablar%20con%20un%20experto%20sobre%20_____%20(vi%20la%20web).&utm_source=web&utm_medium=hero&utm_campaign=cta_whatsapp"
-           target="_blank" rel="noopener">
-          Habla con un experto
-        </a>
+           target="_blank" rel="noopener">Habla con un experto</a>
       </div>
     </div>
   </header>
 
   <!-- QUIÉNES SOMOS -->
-<section id="servicios" class="services-section">
-  <div class="container text-center">
-    <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">Nuestros Servicios</h2>
-    <p style="font-size:1.2rem; color:#444; max-width:800px; margin:20px auto 40px;">
-      Integramos inteligencia artificial, estrategia visual y desarrollo humano para ayudarte a evolucionar de verdad.
-    </p>
-
-    <div class="row">
-      <!-- A) Formación y Desarrollo -->
-      <div class="col-md-4 mb-4">
-        <div class="service-card">
-          <h4>🧠 Formación y Desarrollo</h4>
-          <ul>
-            <li>ChatGPT (adultos, empresas, niños)</li>
-            <li>Ingeniería de Prompts</li>
-            <li>IA en finanzas</li>
-            <li>Habilidades blandas</li>
-            <li>Educación financiera</li>
-          </ul>
-          <div class="card-actions">
-            <a href="cursos.html" class="btn btn-primary">Saber más</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- B) Estrategia Visual con IA -->
-      <div class="col-md-4 mb-4">
-        <div class="service-card">
-          <h4>🎥 Estrategia Visual con IA</h4>
-          <ul>
-            <li>Videos con avatares</li>
-            <li>Onboarding digital</li>
-            <li>Avatares interactivos</li>
-          </ul>
-          <div class="card-actions">
-            <a href="estrategia-visual.html" class="btn btn-primary">Ver ejemplos</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- C) Análisis en Atención al Cliente -->
-      <div class="col-md-4 mb-4">
-        <div class="service-card">
-          <h4>🤖 Análisis en Atención al Cliente</h4>
-          <ul>
-            <li>Análisis de conversaciones</li>
-            <li>Chatbots internos</li>
-            <li>Prevención de cancelaciones</li>
-            <li>Reducción de errores</li>
-          </ul>
-          <div class="card-actions">
-            <a href="analisis-atencion.html" class="btn btn-primary">Conocer</a>
-          </div>
-        </div>
-      </div>
+  <section id="quienes-somos" style="padding:80px 20px; background-color:#f2f4f8; text-align:center;">
+    <div class="container">
+      <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">Guiamos con conocimiento, no con promesas.</h2>
+      <p style="max-width:800px; margin:40px auto 0; font-size:1.2rem; color:#333;">
+        Somos una consultora que fusiona <strong>inteligencia artificial</strong> con <strong>habilidades humanas</strong>.<br>
+        Nuestro propósito es ayudarte a avanzar en serio, sin adivinar, sin sentirte solo.
+      </p>
     </div>
-  </div>
+  </section>
 
-  <!-- Onda decorativa que “engancha” con la sección de abajo -->
-  <div class="services-wave" aria-hidden="true">
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0V46.29c47.71,22,98.7,29.05,146.39,13.88C230,36,284.2-1.8,339.76,1.58c54.16,3.29,98.75,41.27,152.92,52.49C590,67.09,647,55.07,698.81,34.46c49.87-19.54,85.8-40.52,133.93-33.33,65,9.86,136.33,57.08,191.65,80.17,60.21,25.06,117.61,30.68,175.61,21.88V0Z" class="shape-fill"></path>
-    </svg>
-  </div>
-</section>
-
-
-  <!-- SERVICIOS -->
-  <section id="servicios" style="padding:80px 20px; background-color:#ffffff;">
+  <!-- SERVICIOS (con wave) -->
+  <section id="servicios" class="services-section">
     <div class="container text-center">
       <h2 style="font-size:2.5rem; color:#1d3557; font-weight:bold;">Nuestros Servicios</h2>
       <p style="font-size:1.2rem; color:#444; max-width:800px; margin:20px auto 40px;">
@@ -263,7 +171,13 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- Onda decorativa -->
+    <div class="services-wave" aria-hidden="true">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.71,22,98.7,29.05,146.39,13.88C230,36,284.2-1.8,339.76,1.58c54.16,3.29,98.75,41.27,152.92,52.49C590,67.09,647,55.07,698.81,34.46c49.87-19.54,85.8-40.52,133.93-33.33,65,9.86,136.33,57.08,191.65,80.17,60.21,25.06,117.61,30.68,175.61,21.88V0Z" class="shape-fill"></path>
+      </svg>
     </div>
   </section>
 
@@ -294,12 +208,12 @@
       <div style="display:flex; flex-direction:column; gap:40px; align-items:center;">
         <blockquote style="font-style:italic; max-width:700px; font-size:1.2rem; color:#333;">
           🗣️ “Tomé el curso para manejo de IA (chatGPT y otros). Es increíble todo lo que podemos hacer con estas herramientas y sin duda es importante tener una capacitación sobre cuál es la mejor forma para interactuar y dar instrucciones.
-El curso es muy claro, muy bien preparado y te va guiando de la mano. Estoy muy satisfecha con los resultados que he obtenido por mi inversión.”<br>
+          El curso es muy claro, muy bien preparado y te va guiando de la mano. Estoy muy satisfecha con los resultados que he obtenido por mi inversión.”<br>
           <strong>— Sonia B. - Abogada (Corporativa y Notarial)</strong>
         </blockquote>
         <blockquote style="font-style:italic; max-width:700px; font-size:1.2rem; color:#333;">
-          🗣️ “Necesitaba entender lo básico acerca de la IA para poder ayudar a mis equipos de trabajo a usarla como una herramienta y mejorar mi gestión y su desempeño. No entendía los alcances y limitantes de la IA, por lo que no podía establecer una forma de implementar dicha herramienta en la práctica 
-Los dos módulos del curso de ChatGPT Me ayudaron a enriquecer las opciones para mejorar mi gestión, buscar proyectos más complejos y en su momento pelear por un mejor puesto.”<br>
+          🗣️ “Necesitaba entender lo básico acerca de la IA para poder ayudar a mis equipos de trabajo a usarla como una herramienta y mejorar mi gestión y su desempeño. No entendía los alcances y limitantes de la IA, por lo que no podía establecer una forma de implementar dicha herramienta en la práctica.
+          Los dos módulos del curso de ChatGPT me ayudaron a enriquecer las opciones para mejorar mi gestión, buscar proyectos más complejos y en su momento pelear por un mejor puesto.”<br>
           <strong>— Oscar U. - Agile Coach/Scrum Master/PM Sector TI</strong>
         </blockquote>
       </div>
@@ -338,28 +252,22 @@ Los dos módulos del curso de ChatGPT Me ayudaron a enriquecer las opciones para
   <footer class="text-center py-4">
     <p class="mb-2">Síguenos y escríbenos:</p>
     <div class="social d-flex justify-content-center align-items-center">
-      <!-- Instagram -->
       <a class="mx-3" href="https://www.instagram.com/lignumgroup/" target="_blank" rel="noopener" aria-label="Instagram">
         <i class="fab fa-instagram fa-lg"></i>
       </a>
-      <!-- WhatsApp -->
       <a class="mx-3" href="https://wa.me/5215543518336?text=Hola%20Lignum%2C%20vengo%20de%20la%20web%20y%20quiero%20informes.&utm_source=web&utm_medium=footer&utm_campaign=whatsapp_footer"
          target="_blank" rel="noopener" aria-label="WhatsApp">
         <i class="fab fa-whatsapp fa-lg"></i>
       </a>
-      <!-- Facebook -->
       <a class="mx-3" href="https://www.facebook.com/Lignumgroupmx" target="_blank" rel="noopener" aria-label="Facebook">
         <i class="fab fa-facebook fa-lg"></i>
       </a>
-      <!-- LinkedIn -->
       <a class="mx-3" href="https://www.linkedin.com/company/lignum-groupmx/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <i class="fab fa-linkedin fa-lg"></i>
       </a>
-      <!-- Email educación -->
       <a class="mx-3" href="mailto:educacion@lignum-group.com?subject=Contacto%20desde%20la%20web" aria-label="Email educación">
         <i class="fas fa-envelope fa-lg"></i>
       </a>
-      <!-- Email proyectos -->
       <a class="mx-3" href="mailto:proyectos@lignum-group.com?subject=Proyectos%20-%20Contacto%20desde%20la%20web" aria-label="Email proyectos">
         <i class="fas fa-envelope-open fa-lg"></i>
       </a>
