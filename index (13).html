@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIGNUM GROUP | Estrategia, Tecnología y Comunicación</title>
+    <meta name="description" content="Acompañamos a organizaciones a avanzar con claridad y estructura. Consultoría en comunicación estratégica, tecnología aplicada (IA) y formación de talento.">
+    
+    <!-- Tipografías exactas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Colores exactos de tu identidad */
+        :root {
+            --marfil: #EAE3D9;
+            --azul-noche: #10284E;
+            --oro-mate: #D2B57B;
+            --blanco-frio: #FAFBFD;
+            --gris-perla: #E3E1E2;
+            --azul-medio: #1a3a6b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--marfil);
+            color: var(--azul-noche);
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+        }
+        
+        /* Header */
+        header {
+            background: var(--marfil);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(210, 181, 123, 0.2);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: var(--azul-noche);
+        }
+        
+        .logo-subtext {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--azul-noche);
+            opacity: 0.7;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--azul-noche);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--oro-mate);
+        }
+        
+        .btn-agendar {
+            border: 1px solid var(--azul-noche);
+            padding: 0.5rem 1.5rem;
+            border-radius: 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 85vh;
+            background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(234, 227, 217, 0.75);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-tag {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--azul-noche);
+            background: rgba(234, 227, 217, 0.9);
+            padding: 0.75rem 2rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--azul-noche);
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--azul-noche);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background: var(--azul-noche);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--azul-medio);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--azul-noche);
+            border: 1px solid var(--azul-noche);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--azul-noche);
+            color: white;
+        }
+        
+        /* Sección Nosotros */
+        .seccion-nosotros {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .seccion-tag {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--oro-mate);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .seccion-titulo {
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            color: var(--azul-noche);
+        }
+        
+        .seccion-titulo em {
+            font-style: italic;
+            color: var(--oro-mate);
+        }
+        
+        .nosotros-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .owl-image {
+            width: 100%;
+            border: 1px solid var(--oro-mate);
+            padding: 1.5rem;
+            background: var(--blanco-frio);
+        }
+        
+        .owl-caption {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--oro-mate);
+        }
+        
+        .nosotros-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .nosotros-content p {
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #444;
+        }
+        
+        .proposito-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .proposito-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .proposito-item p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Sección Servicios - fondo azul */
+        .seccion-servicios {
+            background: var(--azul-noche);
+            color: white;
+            padding: 8rem 3rem;
+        }
+        
+        .servicios-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .servicios-intro {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .servicios-intro .seccion-tag {
+            color: var(--oro-mate);
+        }
+        
+        .servicios-intro h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .servicios-intro h2 em {
+            font-style: italic;
+            color: var(--oro-mate);
+        }
+        
+        .servicios-intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .servicio-item {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 5rem;
+            margin-bottom: 6rem;
+            align-items: center;
+        }
+        
+        .servicio-item:nth-child(even) {
+            grid-template-columns: 1.3fr 1fr;
+        }
+        
+        .servicio-item:nth-child(even) .servicio-content {
+            order: -1;
+        }
+        
+        .servicio-icon-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .servicio-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid var(--oro-mate);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .servicio-tag {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--oro-mate);
+            text-transform: uppercase;
+        }
+        
+        .servicio-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            color: white;
+        }
+        
+        .servicio-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+        
+        .servicio-content ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .servicio-content li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+        }
+        
+        .servicio-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--oro-mate);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--oro-mate);
+            color: var(--oro-mate);
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline:hover {
+            background: var(--oro-mate);
+            color: var(--azul-noche);
+        }
+        
+        /* Sección diferencial */
+        .seccion-diferencial {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .diferencial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .diferencial-card {
+            background: var(--blanco-frio);
+            padding: 3rem 2.5rem;
+            border: 1px solid var(--oro-mate);
+        }
+        
+        .diferencial-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .diferencial-card p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        /* Equipo */
+        .seccion-equipo {
+            padding: 8rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .equipo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem;
+            margin-top: 4rem;
+        }
+        
+        .equipo-member {
+            text-align: center;
+        }
+        
+        .equipo-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--azul-noche), var(--azul-medio));
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--oro-mate);
+            font-weight: 300;
+            font-family: 'Cormorant Garamond', serif;
+            border: 3px solid var(--oro-mate);
+        }
+        
+        .equipo-member h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .equipo-role {
+            color: var(--oro-mate);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .equipo-bio {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #666;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        /* Testimonios */
+        .seccion-testimonios {
+            background: var(--blanco-frio);
+            padding: 8rem 3rem;
+        }
+        
+        .testimonios-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .testimonio-card {
+            background: white;
+            padding: 2.5rem;
+            border: 1px solid var(--gris-perla);
+        }
+        
+        .testimonio-card p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .testimonio-author {
+            font-weight: 600;
+            color: var(--azul-noche);
+        }
+        
+        .testimonio-role {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        
+        /* CTA Final */
+        .cta-final {
+            background: var(--oro-mate);
+            padding: 6rem 3rem;
+            text-align: center;
+        }
+        
+        .cta-final h2 {
+            font-size: 3rem;
+            color: var(--azul-noche);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-final .btn {
+            background: var(--azul-noche);
+            color: white;
+            font-size: 1rem;
+            padding: 1.25rem 3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--azul-noche);
+            color: white;
+            padding: 5rem 3rem 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .footer-logo-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .footer-logo-section .subtext {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--oro-mate);
+            font-style: italic;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+            display: block;
+        }
+        
+        .footer-section a:hover {
+            color: var(--oro-mate);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            border-color: var(--oro-mate);
+            color: var(--oro-mate);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .nosotros-grid,
+            .servicio-item,
+            .equipo-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .diferencial-grid,
+            .testimonios-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .servicio-item:nth-child(even) .servicio-content {
+                order: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="logo-text">lignum</div>
+                <div class="logo-subtext">GROUP</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#nosotros">NOSOTROS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+                <li><a href="#contacto" class="btn-agendar">AGENDAR CITA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-tag">ESTRATEGIA · TECNOLOGÍA · HUMANIDAD</div>
+            <h1>Menos ruido,<br><em>más criterio.</em></h1>
+            <p class="hero-subtitle">Acompañamos a personas y organizaciones a avanzar con claridad y estructura en un mundo saturado de información.</p>
+            <div class="hero-buttons">
+                <a href="#servicios" class="btn btn-primary">NUESTROS SERVICIOS</a>
+                <a href="#contacto" class="btn btn-secondary">HABLEMOS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="seccion-nosotros" id="nosotros">
+        <div class="seccion-tag">QUIÉNES SOMOS</div>
+        <h2 class="seccion-titulo">Estrategia para quienes piensan a <em>largo plazo.</em></h2>
+        
+        <div class="nosotros-grid">
+            <div>
+                <div class="owl-image">
+                    <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600" alt="Símbolo Hokoo" style="width: 100%; display: block; filter: grayscale(100%);">
+                </div>
+                <div class="owl-caption">"Hokoo"<br>Símbolo de visión y claridad</div>
+            </div>
+            
+            <div class="nosotros-content">
+                <h3>Nuestra Esencia</h3>
+                <p>Lignum Group es una firma estratégica que integra inteligencia artificial, neuromarketing, comunicación estratégica y capacitación para guiar a organizaciones en procesos de crecimiento, transformación y toma de decisiones conscientes.</p>
+                <p>No somos un proveedor de cursos ni vendemos soluciones genéricas. Actuamos como un socio estratégico que aporta claridad, estructura y dirección en contextos complejos.</p>
+                
+                <h3>Propósito</h3>
+                <p>Acompañar a las personas y organizaciones a avanzar profesionalmente con claridad, criterio y estructura, mediante la intersección de la tecnología, el desarrollo humano y la comunicación.</p>
+                
+                <div class="proposito-grid">
+                    <div class="proposito-item">
+                        <h4>Proposición Real</h4>
+                        <p>Replanteamos cada desafío sobre su realidad. Crecimiento real, con actuación y medible.</p>
+                    </div>
+                    <div class="proposito-item">
+                        <h4>Acompañamiento Ético</h4>
+                        <p>Operamos con responsabilidad y empatía. Respetamos los ritmos y procesos.</p>
+                    </div>
+                    <div class="proposito-item">
+                        <h4>Cercanía Profesional</h4>
+                        <p>Relación honesta, directa y responsable. Sin retórica corporativa ni intermediarios ocultos.</p>
+                    </div>
+                    <div class="proposito-item">
+                        <h4>Orgullo y Reconocimiento</h4>
+                        <p>Celebramos el valor obrado con constancia, preparación y disciplina bien ejecutadas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="seccion-servicios" id="servicios">
+        <div class="servicios-container">
+            <div class="servicios-intro">
+                <div class="seccion-tag">NUESTRAS SOLUCIONES</div>
+                <h2>Áreas de <em>Intervención</em></h2>
+                <p>No ofrecemos herramientas aisladas. Diseñamos ecosistemas que integran tecnología, personas y estrategia para un crecimiento real.</p>
+            </div>
+            
+            <div class="servicio-item">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700" alt="Comunicación Estratégica" style="width: 100%; display: block; filter: grayscale(100%);">
+                </div>
+                <div class="servicio-content">
+                    <div class="servicio-icon-header">
+                        <div class="servicio-icon">📊</div>
+                        <div class="servicio-tag">NEUROMARKETING Y CONTENIDO</div>
+                    </div>
+                    <h3>Comunicación Estratégica</h3>
+                    <p>Diseñamos sistemas de comunicación que conectan con las personas correctas, en el momento correcto y con el mensaje adecuado. Transformamos información compleja en estrategias claras y personalizadas.</p>
+                    <ul>
+                        <li>Estrategias de comunicación institucional y comercial</li>
+                        <li>Creación de contenido estratégico y storytelling</li>
+                        <li>Diseño de mensajes clave con neuromarketing</li>
+                        <li>Materiales audiovisuales apoyados en IA</li>
+                    </ul>
+                    <a href="#contacto" class="btn-outline">CONSULTAR SERVICIO</a>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700" alt="Tecnología Aplicada" style="width: 100%; display: block; filter: grayscale(100%);">
+                </div>
+                <div class="servicio-content">
+                    <div class="servicio-icon-header">
+                        <div class="servicio-icon">🤖</div>
+                        <div class="servicio-tag">SOFTWARE INTELIGENTE E I.A.</div>
+                    </div>
+                    <h3>Tecnología Aplicada</h3>
+                    <p>Desarrollamos soluciones de inteligencia artificial personalizadas para acompañar la operación diaria y potenciar el desempeño humano, sin reemplazarlo.</p>
+                    <ul>
+                        <li>Asistentes de IA personalizados y GPTs especializados</li>
+                        <li>Sistemas de apoyo a la toma de decisiones</li>
+                        <li>Automatización inteligente de procesos</li>
+                        <li>Herramientas de acompañamiento operativo</li>
+                    </ul>
+                    <a href="#contacto" class="btn-outline">CONSULTAR SERVICIO</a>
+                </div>
+            </div>
+
+            <div class="servicio-item">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700" alt="Formación y Talento" style="width: 100%; display: block; filter: grayscale(100%);">
+                </div>
+                <div class="servicio-content">
+                    <div class="servicio-icon-header">
+                        <div class="servicio-icon">🎓</div>
+                        <div class="servicio-tag">CAPACITACIÓN Y DESARROLLO</div>
+                    </div>
+                    <h3>Formación y Talento</h3>
+                    <p>Experiencias de aprendizaje que modifican comportamientos, fortalecen el criterio profesional y desarrollan habilidades con estrategia organizacional.</p>
+                    <ul>
+                        <li>IA aplicada al trabajo y la vida profesional</li>
+                        <li>Liderazgo y toma de decisiones efectivas</li>
+                        <li>Comunicación efectiva y escritura</li>
+                        <li>Desarrollo de habilidades blandas</li>
+                    </ul>
+                    <a href="#contacto" class="btn-outline">CONSULTAR SERVICIO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferencial -->
+    <section class="seccion-diferencial">
+        <div class="seccion-tag">NUESTRO ENFOQUE</div>
+        <h2 class="seccion-titulo">Nuestro Enfoque <em>Diferencial</em></h2>
+        <p style="max-width: 800px; margin: 0 auto 0; font-size: 1.1rem; color: #666;">En Lignum Group no creemos en fórmulas universales. Cada proyecto es diseñado a la medida, considerando el nivel de madurez digital, la cultura organizacional y los objetivos estratégicos.</p>
+        
+        <div class="diferencial-grid">
+            <div class="diferencial-card">
+                <h3>Diagnóstico</h3>
+                <p>Entendemos el punto de partida real antes de proponer soluciones. No asumimos, conversamos, cuestionamos y construimos.</p>
+            </div>
+            <div class="diferencial-card">
+                <h3>Estrategia</h3>
+                <p>Diseñamos rutas claras que prioricen lo esencial sobre lo urgente. Cada acción responde a un objetivo específico.</p>
+            </div>
+            <div class="diferencial-card">
+                <h3>Acompañamiento</h3>
+                <p>No solo entregamos, permanecemos. Acompañamos la implementación y optimización con auditoría continua.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="seccion-equipo">
+        <div class="seccion-tag">NUESTRO EQUIPO</div>
+        <h2 class="seccion-titulo">Personas que <em>acompañan</em></h2>
+        
+        <div class="equipo-grid">
+            <div class="equipo-member">
+                <div class="equipo-photo">T</div>
+                <h3>Teresa Castellanos</h3>
+                <p class="equipo-role">Directora de Estrategia y Comunicación</p>
+                <p class="equipo-bio">Especialista en diseño de marca, estrategia de contenidos y comunicación digital. Con más de 10 años ayudando a empresas a encontrar y comunicar su propuesta de valor.</p>
+            </div>
+            
+            <div class="equipo-member">
+                <div class="equipo-photo">F</div>
+                <h3>Fernando Morales</h3>
+                <p class="equipo-role">Director de Tecnología e Innovación</p>
+                <p class="equipo-bio">Experto en implementación de IA y transformación digital. Lidera proyectos de automatización y optimización tecnológica para organizaciones de diversos sectores.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="seccion-testimonios">
+        <div class="testimonios-container">
+            <div class="seccion-tag">LO QUE DICEN</div>
+            <h2 class="seccion-titulo">Resultados <em>reales</em></h2>
+            
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <p>"Tomé el curso para manejo de IA (ChatGPT y otros). Es increíble todo lo que podemos hacer y, sobre todo, cómo dar instrucciones correctas. El curso es claro y te guía paso a paso. La inversión se me regresó en productividad desde la primera semana."</p>
+                    <p class="testimonio-author">Sonia B.</p>
+                    <p class="testimonio-role">Abogada (Corporativa y Notarial)</p>
+                </div>
+                
+                <div class="testimonio-card">
+                    <p>"Necesitaba entender los alcances de la IA para guiar a mis equipos. Con los módulos de ChatGPT mejoré mi gestión, diseñé proyectos más complejos y hoy tengo argumentos claros para buscar un mejor puesto."</p>
+                    <p class="testimonio-author">Oscar U.</p>
+                    <p class="testimonio-role">Agile Coach / PM TI</p>
+                </div>
+                
+                <div class="testimonio-card">
+                    <p>"Implementamos asistentes internos para atención al cliente. Bajaron tiempos de respuesta y el equipo ahora tiene claridad para responder sin improvisar. La auditoría mensual nos mantiene mejorando."</p>
+                    <p class="testimonio-author">María G.</p>
+                    <p class="testimonio-role">Gerente de CX (Retail)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final" id="contacto">
+        <h2>INICIAR CONVERSACIÓN</h2>
+        <a href="mailto:lignumgroupmx@gmail.com" class="btn">AGENDAR REUNIÓN</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <h3>LIGNUM</h3>
+                <p class="subtext">GROUP</p>
+                <p>Acompañamos a las personas y organizaciones a avanzar con claridad, criterio y estructura.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <a href="tel:+525543518336">+52 55 4351 8336</a>
+                <a href="mailto:lignumgroupmx@gmail.com">lignumgroupmx@gmail.com</a>
+                <p>Ciudad de México</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Aviso de Privacidad</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#">f</a>
+                    <a href="#">in</a>
+                    <a href="#">ig</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Lignum Group. Todos los derechos reservados.</p>
+            <p>Diseñado con criterio y estructura.</p>
+        </div>
+    </footer>
+</body>
+</html>
