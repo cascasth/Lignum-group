@@ -251,7 +251,7 @@
         .owl-caption {
             text-align: center;
             margin-top: 1.5rem;
-            font-size: 0.85rem;
+            font-size: 1.5rem;
             font-style: italic;
             color: var(--oro-mate);
         }
@@ -472,21 +472,24 @@
             text-align: center;
         }
         
-        .equipo-photo {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--azul-noche), var(--azul-medio));
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: var(--oro-mate);
-            font-weight: 300;
-            font-family: 'Cormorant Garamond', serif;
-            border: 3px solid var(--oro-mate);
-        }
+ .equipo-avatar{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 3px solid var(--oro-mate);
+  overflow: hidden;          /* recorta la foto al círculo */
+  margin: 0 auto 2rem;
+  background: transparent;   /* o var(--marfil) si quieres un “respaldo” */
+}
+
+.equipo-photo{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;         /* llena el círculo */
+  object-position: 50% 25%;  /* ajusta encuadre (cara) */
+}
+
         
         .equipo-member h3 {
             font-size: 1.8rem;
@@ -723,7 +726,7 @@
                 <div class="owl-image">
                     <img src="images/buho trazos.png" alt="Símbolo Hokoo" style="width: 100%; display: block;">
                 </div>
-                <div class="owl-caption">"Hokoo"<br>Símbolo de visión y claridad</div>
+                <div class="owl-caption">"Hok'oó"<br>Símbolo de visión y claridad</div>
             </div>
             
             <div class="nosotros-content">
@@ -859,15 +862,18 @@
         
         <div class="equipo-grid">
             <div class="equipo-member">
-                <img src="images/Teresa.png" alt="Teresa Castañeda" class="equipo-photo" style="width: 250px; height: 250px; border-radius: 50%; object-fit: contain; background: var(--marfil); border: 3px solid var(--oro-mate); padding: 10px;">
+               <img src="images/Teresa.png" alt="Teresa Castañeda"
+  class="equipo-photo"
+  style="width:250px;height:250px;border-radius:50%;object-fit:cover;object-position:center;border:3px solid var(--oro-mate);">
+
                 <h3>Teresa Castañeda</h3>
                 <p class="equipo-role">Directora de Estrategia Digital y Comunicación</p>
                 <p class="equipo-bio">Especialista en diseño de marca, estrategia de contenidos y comunicación digital. Con más de 10 años ayudando a empresas a encontrar y comunicar su propuesta de valor.</p>
             </div>
             
             <div class="equipo-member">
-                <img src="images/Fernando.png" alt="Fernando García" class="equipo-photo" style="width: 250px; height: 250px; border-radius: 50%; object-fit: contain; background: var(--marfil); border: 3px solid var(--oro-mate); padding: 10px;">
-                <h3>Fernando García</h3>
+                <img src="images/Fernando.png" alt="Fernando García"   class="equipo-photo"
+  style="width:250px;height:250px;border-radius:50%;object-fit:cover;object-position:center;border:3px solid var(--oro-mate);">
                 <p class="equipo-role">Director de Comercial</p>
                 <p class="equipo-bio">Experto en implementación de IA y transformación digital. Lidera proyectos de automatización y optimización tecnológica para organizaciones de diversos sectores.</p>
             </div>
