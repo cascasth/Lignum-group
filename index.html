@@ -455,32 +455,54 @@
         }
         
         /* Equipo */
-        .seccion-equipo {
-            padding: 6rem 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .equipo-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-        
-        .equipo-member {
-            text-align: center;
-        }
+.seccion-equipo{
+  padding: 4.5rem 3rem;   /* antes 6rem */
+  max-width: 1200px;      /* un poco más cerrado */
+  margin: 0 auto;
+}
+
+.equipo-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem;           /* antes 3rem */
+  margin-top: 2.5rem;     /* antes 4rem */
+  align-items: start;
+}
+
+.equipo-member h3{
+  margin-top: 0.25rem;
+}
+
+.equipo-role{
+  margin-bottom: 1rem;    /* antes 1.5rem */
+}
+
+.equipo-bio{
+  max-width: 360px;       /* baja un poco para que se vea más “editorial” */
+}
+
         
  .equipo-avatar{
-  width: 250px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
-  border: 3px solid var(--oro-mate);
-  overflow: hidden;          /* recorta la foto al círculo */
-  margin: 0 auto 2rem;
-  background: transparent;   /* o var(--marfil) si quieres un “respaldo” */
+  border: 2px solid var(--oro-mate);
+  overflow: hidden;
+  margin: 0 auto 1.25rem;
+  background: transparent;
 }
+
+.equipo-photo{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Encadre por persona (evita decapitaciones) */
+.equipo-photo--teresa{ object-position: 50% 25%; }
+.equipo-photo--fernando{ object-position: 50% 10%; } /* sube el encuadre (más frente/aire arriba) */
+
 
 .equipo-photo{
   width: 100%;
@@ -861,10 +883,9 @@
         <h2 class="seccion-titulo">Personas que <em>acompañan</em></h2>
         
         <div class="equipo-grid">
-            <div class="equipo-member">
-               <img src="images/Teresa.png" alt="Teresa Castañeda"
-  class="equipo-photo"
-  style="width:250px;height:250px;border-radius:50%;object-fit:cover;object-position:center;border:3px solid var(--oro-mate);">
+<div class="equipo-avatar">
+  <img src="images/Teresa.png" alt="Teresa Castañeda" class="equipo-photo equipo-photo--teresa">
+</div>
 
                 <h3>Teresa Castañeda</h3>
                 <p class="equipo-role">Directora de Estrategia Digital y Comunicación</p>
@@ -872,11 +893,15 @@
             </div>
             
             <div class="equipo-member">
-                <img src="images/Fernando.png" alt="Fernando García"   class="equipo-photo"
-  style="width:250px;height:250px;border-radius:50%;object-fit:cover;object-position:center;border:3px solid var(--oro-mate);">
-                <p class="equipo-role">Director de Comercial</p>
-                <p class="equipo-bio">Experto en implementación de IA y transformación digital. Lidera proyectos de automatización y optimización tecnológica para organizaciones de diversos sectores.</p>
-            </div>
+  <div class="equipo-avatar">
+    <img src="images/Fernando.png" alt="Fernando García" class="equipo-photo equipo-photo--fernando">
+  </div>
+
+  <h3>Fernando García</h3>
+  <p class="equipo-role">Director Comercial</p>
+  <p class="equipo-bio">Experto en implementación de IA y transformación digital. Lidera proyectos de automatización y optimización tecnológica para organizaciones de diversos sectores.</p>
+</div>
+
         </div>
     </section>
 
