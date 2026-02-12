@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lignum Group - Mapa Interactivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #EAE3D9 0%, #FAFBFD 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            color: #10284E;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #10284E;
+            margin-bottom: 12px;
+        }
+
+        .header .description {
+            font-size: 1rem;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Símbolo Central */
+        .central-symbol {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .owl-circle {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            background: #FAFBFD;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(16, 40, 78, 0.15);
+            position: relative;
+            transition: transform 0.3s ease;
+            padding: 20px;
+        }
+
+        .owl-circle:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .owl-icon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .symbol-text {
+            margin-top: 16px;
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            color: #10284E;
+            font-style: italic;
+        }
+
+        /* Áreas de Intervención */
+        .section-title {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            color: #10284E;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .area-card {
+            background: #FAFBFD;
+            border-radius: 16px;
+            padding: 32px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .area-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(16, 40, 78, 0.15);
+        }
+
+        .area-card.active {
+            border-color: var(--card-color);
+        }
+
+        .area-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #FAFBFD;
+        }
+
+        .area-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            color: #10284E;
+            margin-bottom: 12px;
+        }
+
+        .area-card .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .points-list {
+            list-style: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .area-card:hover .points-list {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .points-list li {
+            padding: 8px 0;
+            color: #10284E;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bullet {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Valores */
+        .valores-section {
+            background: #10284E;
+            border-radius: 24px;
+            padding: 48px;
+            color: #FAFBFD;
+            margin-bottom: 60px;
+        }
+
+        .valores-section .section-title {
+            color: #D2B57B;
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .valor-item {
+            text-align: center;
+        }
+
+        .valor-icon {
+            width: 56px;
+            height: 56px;
+            background: #D2B57B;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 28px;
+            color: #10284E;
+            transition: transform 0.3s ease;
+        }
+
+        .valor-item:hover .valor-icon {
+            transform: rotate(360deg);
+        }
+
+        .valor-item h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #D2B57B;
+        }
+
+        .valor-item p {
+            color: #E3E1E2;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Comparativa */
+        .comparativa {
+            background: #FAFBFD;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            max-width: 1000px;
+            margin: 0 auto 60px;
+        }
+
+        .comparativa-header {
+            background: #10284E;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .comparativa-header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            color: #D2B57B;
+        }
+
+        .comparativa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 2px solid #E3E1E2;
+        }
+
+        .comparativa-column {
+            padding: 24px;
+        }
+
+        .comparativa-column:first-child {
+            border-right: 2px solid #E3E1E2;
+        }
+
+        .comparativa-column:last-child {
+            background: linear-gradient(135deg, #EAE3D9 0%, #FAFBFD 100%);
+        }
+
+        .comparativa-column h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .comparativa-column:first-child h3 {
+            color: #666;
+        }
+
+        .comparativa-column:last-child h3 {
+            color: #10284E;
+        }
+
+        .comparativa-column ul {
+            padding-left: 20px;
+            line-height: 2;
+        }
+
+        .comparativa-column:first-child ul {
+            color: #666;
+        }
+
+        .comparativa-column:last-child ul {
+            color: #10284E;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #E3E1E2;
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .footer p {
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            color: #10284E;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .comparativa-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparativa-column:first-child {
+                border-right: none;
+                border-bottom: 2px solid #E3E1E2;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Lignum Group</h1>
+            <p class="subtitle">Claridad y Criterio en la Era de la Inteligencia</p>
+            <p class="description">
+                Menos ruido, más criterio. Un enfoque estratégico que fusiona IA, neuromarketing y formación para construir sistemas de crecimiento sostenibles.
+            </p>
+        </div>
+
+        <!-- Símbolo Central -->
+        <div class="central-symbol">
+            <div class="owl-circle">
+                <img src="images/buho trazos.png" alt="Hok'óo" class="owl-icon">
+            </div>
+            <p class="symbol-text">Hok'óo: Simbolismo de sabiduría y observación consciente</p>
+        </div>
+
+        <!-- Áreas de Intervención -->
+        <h2 class="section-title">Áreas de Intervención Estratégica</h2>
+        <div class="areas-grid">
+            <!-- Área 1: Neuromarketing -->
+            <div class="area-card" style="--card-color: #D2B57B;">
+                <div class="area-icon" style="background: #D2B57B;">🧠</div>
+                <h3>Estrategia y Neuromarketing</h3>
+                <p class="description">
+                    Diseño de sistemas de comunicación basados en el comportamiento humano y la toma de decisiones.
+                </p>
+                <ul class="points-list">
+                    <li><span class="bullet" style="background: #D2B57B;"></span>Estrategias digitales alineadas</li>
+                    <li><span class="bullet" style="background: #D2B57B;"></span>Sistemas de comunicación coherentes</li>
+                    <li><span class="bullet" style="background: #D2B57B;"></span>Contenido estratégico que genera confianza</li>
+                </ul>
+            </div>
+
+            <!-- Área 2: IA -->
+            <div class="area-card" style="--card-color: #10284E;">
+                <div class="area-icon" style="background: #10284E;">✨</div>
+                <h3>IA y Soluciones a Medida</h3>
+                <p class="description">
+                    Desarrollo de asistentes inteligentes y GPTs personalizados que optimizan la operación sin sustituir al humano.
+                </p>
+                <ul class="points-list">
+                    <li><span class="bullet" style="background: #10284E;"></span>Asistentes de IA personalizados</li>
+                    <li><span class="bullet" style="background: #10284E;"></span>GPTs especializados</li>
+                    <li><span class="bullet" style="background: #10284E;"></span>Automatización inteligente</li>
+                </ul>
+            </div>
+
+            <!-- Área 3: Formación -->
+            <div class="area-card" style="--card-color: #D2B57B;">
+                <div class="area-icon" style="background: #D2B57B;">👥</div>
+                <h3>Formación y Desarrollo de Talento</h3>
+                <p class="description">
+                    Programas de aprendizaje enfocados en la aplicación práctica, el pensamiento crítico y la transferencia real.
+                </p>
+                <ul class="points-list">
+                    <li><span class="bullet" style="background: #D2B57B;"></span>Experiencias de aprendizaje aplicadas</li>
+                    <li><span class="bullet" style="background: #D2B57B;"></span>Desarrollo de habilidades blandas</li>
+                    <li><span class="bullet" style="background: #D2B57B;"></span>Liderazgo y toma de decisiones</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Valores -->
+        <div class="valores-section">
+            <h2 class="section-title">El Valor del Enfoque Lignum</h2>
+            <div class="valores-grid">
+                <div class="valor-item">
+                    <div class="valor-icon">🎯</div>
+                    <h3>Claridad antes que Velocidad</h3>
+                    <p>Priorizamos el entendimiento profundo y la ruta clara sobre la acción precipitada.</p>
+                </div>
+                <div class="valor-item">
+                    <div class="valor-icon">💡</div>
+                    <h3>Acompañamiento Ético y Real</h3>
+                    <p>Construimos confianza mediante una guía responsable que evita promesas exageradas y presión emocional.</p>
+                </div>
+                <div class="valor-item">
+                    <div class="valor-icon">⚡</div>
+                    <h3>Tecnología con Propósito</h3>
+                    <p>La IA se integra como un medio para ordenar y apoyar decisiones estratégicas conscientes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparativa -->
+        <div class="comparativa">
+            <div class="comparativa-header">
+                <h2>Comparativa: Propuesta Lignum frente al Mercado Tradicional</h2>
+            </div>
+            <div class="comparativa-grid">
+                <div class="comparativa-column">
+                    <h3>Enfoque Tradicional</h3>
+                    <ul>
+                        <li>Soluciones genéricas y aisladas</li>
+                        <li>Persuasión agresiva y urgencia</li>
+                        <li>Automatización total (sustitución)</li>
+                    </ul>
+                </div>
+                <div class="comparativa-column">
+                    <h3>Propuesta Lignum Group</h3>
+                    <ul>
+                        <li>Ecosistemas de intervención a medida</li>
+                        <li>Claridad aplicada y decisión informada</li>
+                        <li>IA como complemento del criterio humano</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                "Un socio estratégico, no un proveedor.<br>
+                Menos ruido, más criterio.<br>
+                Tecnología con propósito humano."
+            </p>
+        </div>
+    </div>
+</body>
+</html>
