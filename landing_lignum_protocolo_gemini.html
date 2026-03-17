@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lignum Group | Protocolo Gemini</title>
+  <style>
+    :root {
+      --navy: #10284E;
+      --ivory: #EAE3D9;
+      --white: #FAFBFD;
+      --gold: #D2B57B;
+      --gray: #E3E1E2;
+      --text: #24324A;
+      --max: 1120px;
+      --radius: 18px;
+      --shadow: 0 18px 50px rgba(16, 40, 78, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, rgba(16,40,78,0.98), rgba(16,40,78,0.93));
+      color: white;
+      padding: 34px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.85fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      font-weight: 800;
+    }
+
+    .hero p.lead {
+      font-size: 1.12rem;
+      color: rgba(255,255,255,0.9);
+      max-width: 700px;
+      margin: 0 0 26px;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-points li {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      color: var(--text);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 10px 0 2px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--ivory);
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      color: var(--navy);
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    .section-copy {
+      max-width: 760px;
+      margin: 0 0 28px;
+      color: #47556e;
+      font-size: 1.02rem;
+    }
+
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .feature, .problem, .fit, .step {
+      background: #fff;
+      border: 1px solid #edf0f4;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(16,40,78,0.04);
+    }
+
+    .feature h3, .problem h3, .fit h3, .step h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.12rem;
+    }
+
+    .muted-bg {
+      background: linear-gradient(180deg, #f8f9fb, #f1f3f7);
+    }
+
+    .offer-box {
+      background: linear-gradient(180deg, #fff, #fbfbfc);
+      border: 1px solid #ece8df;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .offer-box ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      border: 1px solid #e8ebf1;
+      border-radius: 16px;
+      padding: 18px 20px;
+      background: white;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .final-cta {
+      background: var(--navy);
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .final-cta h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.1;
+    }
+
+    footer {
+      padding: 28px 0 46px;
+      color: #667085;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .topbar {
+        margin-bottom: 28px;
+      }
+      section {
+        padding: 58px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">lignum group</div>
+        <a href="#agenda" class="btn btn-secondary">Solicitar información</a>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Workshop de implementación directa</span>
+          <h1>Elimine el caos documental de su empresa usando Gemini en 3 horas.</h1>
+          <p class="lead">Aprenda a integrar IA real en Gmail, Drive, Docs y su flujo de trabajo para recuperar tiempo, encontrar información en segundos y reducir cuellos de botella operativos.</p>
+
+          <ul class="hero-points">
+            <li><strong>Reconstrucción de hilos:</strong> deje de buscar correos, acuerdos y fechas entre múltiples conversaciones.</li>
+            <li><strong>Auditoría documental:</strong> revise contratos, archivos y procesos con mayor rapidez y criterio.</li>
+            <li><strong>Asistentes útiles:</strong> diseñe una base para automatizar análisis, respuestas y seguimiento interno.</li>
+          </ul>
+
+          <div class="cta-row">
+            <a href="#agenda" class="btn btn-primary">Reservar workshop</a>
+            <a href="#incluye" class="btn btn-secondary">Ver qué incluye</a>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="tag">Sesión uno a uno · 3 horas</div>
+          <h2 style="margin:0; color:#10284E; font-size:1.55rem;">Protocolo Gemini</h2>
+          <p style="margin:12px 0 16px; color:#59657d;">Una sesión práctica para transformar desorden operativo en un sistema más claro, rápido y usable.</p>
+          <div class="price">$7,000 MXN</div>
+          <p style="margin:0 0 18px; color:#59657d;">Implementación inicial guiada para empresas y profesionales que ya trabajan con información crítica.</p>
+          <a href="#agenda" class="btn btn-primary" style="width:100%; text-align:center;">Quiero mi sesión</a>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">El problema no es solo la carga de trabajo. Es el desorden operativo.</h2>
+      <p class="section-copy">Muchas empresas no pierden tiempo por falta de esfuerzo. Lo pierden buscando documentos, reconstruyendo acuerdos, revisando versiones equivocadas o respondiendo una y otra vez la misma información.</p>
+
+      <div class="grid-3">
+        <div class="problem">
+          <h3>Correos y acuerdos dispersos</h3>
+          <p>La información existe, pero encontrarla toma demasiado tiempo y desgasta al equipo.</p>
+        </div>
+        <div class="problem">
+          <h3>Dependencia del criterio humano repetitivo</h3>
+          <p>Todo pasa por una o dos personas que terminan siendo el cuello de botella documental.</p>
+        </div>
+        <div class="problem">
+          <h3>Procesos lentos y poca trazabilidad</h3>
+          <p>Sin estructura clara, los riesgos documentales, errores de seguimiento y pérdidas de contexto aumentan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="muted-bg" id="incluye">
+    <div class="container">
+      <h2 class="section-title">Qué incluye el workshop Protocolo Gemini</h2>
+      <p class="section-copy">Esta sesión no es una clase genérica de IA. Es una implementación inicial aplicada a su operación, con foco en orden, criterio y velocidad funcional.</p>
+
+      <div class="grid-3">
+        <div class="feature">
+          <h3>I. Ecosistema de datos</h3>
+          <p>Conecte Gmail, Drive y Docs para centralizar información y empezar a trabajar con una base más organizada.</p>
+        </div>
+        <div class="feature">
+          <h3>II. Precisión de criterio</h3>
+          <p>Aprenda a usar Gemini con instrucciones claras para reducir ambigüedad y trabajar con información validada.</p>
+        </div>
+        <div class="feature">
+          <h3>III. Asistentes especializados</h3>
+          <p>Diseñe casos iniciales de uso para crear asistentes internos orientados a su lógica y necesidades reales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container grid-2" style="align-items:start;">
+      <div>
+        <h2 class="section-title">Para quién es esta sesión</h2>
+        <p class="section-copy">Este workshop funciona mejor para negocios que ya manejan información, comunicación o documentos con cierta complejidad operativa.</p>
+
+        <div class="grid-2">
+          <div class="fit">
+            <h3>Consultorías y despachos</h3>
+            <p>Si su operación depende de correos, documentos, contratos y seguimiento.</p>
+          </div>
+          <div class="fit">
+            <h3>Equipos administrativos</h3>
+            <p>Si necesitan encontrar, revisar y organizar información más rápido.</p>
+          </div>
+          <div class="fit">
+            <h3>Empresas con Google Workspace</h3>
+            <p>Si ya usan Gmail, Drive o Docs y quieren aprovechar mejor ese entorno.</p>
+          </div>
+          <div class="fit">
+            <h3>Líderes con cuello de botella operativo</h3>
+            <p>Si demasiadas decisiones o validaciones siguen dependiendo de una sola persona.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-box">
+        <h2 style="margin-top:0; color:#10284E;">Resultados esperados</h2>
+        <ul>
+          <li>Encontrar información crítica en menos tiempo.</li>
+          <li>Reducir fricción al revisar correos, acuerdos y archivos.</li>
+          <li>Empezar a estructurar una operación más trazable.</li>
+          <li>Definir oportunidades reales para implementar IA con criterio.</li>
+          <li>Abrir la puerta a una segunda fase de automatización más robusta.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="muted-bg">
+    <div class="container">
+      <h2 class="section-title">Cómo funciona</h2>
+      <p class="section-copy">Una ruta simple, directa y sin humo tecnológico con capa de brillantina.</p>
+      <div class="grid-3">
+        <div class="step">
+          <h3>1. Diagnóstico inicial</h3>
+          <p>Revisamos su contexto, tipo de operación y principales fricciones documentales.</p>
+        </div>
+        <div class="step">
+          <h3>2. Workshop aplicado</h3>
+          <p>Trabajamos en vivo sobre usos concretos de Gemini para su operación y sus procesos.</p>
+        </div>
+        <div class="step">
+          <h3>3. Siguiente paso estratégico</h3>
+          <p>Si aplica, definimos qué parte conviene implementar después: asistentes, automatización o sistema documental ampliado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="faq">
+        <div class="faq-item">
+          <strong>¿Necesito saber usar IA antes?</strong>
+          <span>No. La sesión está diseñada para aterrizar Gemini a un contexto operativo real, no para hablar en abstracto.</span>
+        </div>
+        <div class="faq-item">
+          <strong>¿Es una clase grabada?</strong>
+          <span>No. Es una sesión en vivo, uno a uno, de implementación directa.</span>
+        </div>
+        <div class="faq-item">
+          <strong>¿Después del workshop puedo contratar una implementación más grande?</strong>
+          <span>Sí. Esta sesión también funciona como puerta de entrada a una segunda fase de diseño de asistentes, automatización y sistemas de operación con IA.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agenda">
+    <div class="container">
+      <div class="final-cta">
+        <h2>Empiece a ordenar su operación con IA útil, no con promesas vacías.</h2>
+        <p style="max-width:760px; color:rgba(255,255,255,0.86); margin:0 0 18px;">Solicite información o reserve su workshop Protocolo Gemini. Aquí puede conectar su formulario, agenda, botón de WhatsApp o sistema de pago.</p>
+        <div class="cta-row">
+          <a href="https://wa.me/525543518336" class="btn btn-primary">Hablar por WhatsApp</a>
+          <a href="mailto:lignumgroupmx@gmail.com" class="btn btn-secondary">Solicitar por correo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      Lignum Group · Protocolo Gemini · Estrategia y productividad de alto rendimiento.
+    </div>
+  </footer>
+</body>
+</html>
