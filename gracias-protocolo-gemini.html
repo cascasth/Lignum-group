@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro recibido | Lignum Group</title>
+  <style>
+    :root{
+      --azul:#10284E;
+      --marfil:#EAE3D9;
+      --blanco:#FAFBFD;
+      --oro:#D2B57B;
+      --gris:#E3E1E2;
+      --texto:#24324A;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--blanco);
+      color: var(--texto);
+      display:flex;
+      min-height:100vh;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:720px;
+      background:#fff;
+      border:1px solid #e8ebf0;
+      border-radius:24px;
+      padding:40px 32px;
+      box-shadow:0 18px 50px rgba(16,40,78,0.08);
+      text-align:center;
+    }
+
+    .logo{
+      margin-bottom:24px;
+    }
+
+    .logo img{
+      max-width:220px;
+      height:auto;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--marfil);
+      color:var(--azul);
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0 0 16px;
+      font-size:clamp(30px, 5vw, 44px);
+      line-height:1.1;
+      color:var(--azul);
+    }
+
+    p{
+      margin:0 auto 14px;
+      max-width:560px;
+      font-size:17px;
+      line-height:1.65;
+      color:#4c5a73;
+    }
+
+    .box{
+      margin:28px auto 30px;
+      background:#f8f9fb;
+      border:1px solid #edf0f4;
+      border-radius:18px;
+      padding:20px;
+      text-align:left;
+      max-width:560px;
+    }
+
+    .box h2{
+      margin:0 0 12px;
+      font-size:18px;
+      color:var(--azul);
+    }
+
+    .box ul{
+      margin:0;
+      padding-left:18px;
+      color:#4c5a73;
+      line-height:1.7;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:8px;
+      text-decoration:none;
+      background:var(--oro);
+      color:var(--azul);
+      font-weight:700;
+      padding:14px 22px;
+      border-radius:999px;
+      transition:transform .2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .small{
+      margin-top:20px;
+      font-size:14px;
+      color:#6b768c;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="logo">
+      <img src="assets/logo-lignum-azul.png" alt="Lignum Group">
+    </div>
+
+    <span class="tag">Registro recibido</span>
+
+    <h1>Gracias por registrarte</h1>
+
+    <p>
+      Hemos recibido tu información para el workshop <strong>Protocolo Gemini</strong>.
+    </p>
+
+    <p>
+      En breve recibirás los detalles correspondientes para avanzar en el proceso.
+    </p>
+
+    <div class="box">
+      <h2>Siguiente paso</h2>
+      <ul>
+        <li>Revisar tu correo y tu bandeja de spam.</li>
+        <li>Conservar este enlace por si necesitas volver al sitio.</li>
+        <li>Si tienes dudas, puedes escribirnos directamente.</li>
+      </ul>
+    </div>
+
+    <a class="btn" href="https://wa.me/525543518336?text=Hola%2C%20me%20registr%C3%A9%20al%20workshop%20Protocolo%20Gemini%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n">
+      Contactar por WhatsApp
+    </a>
+
+    <p class="small">
+      Lignum Group · Claridad, estructura y criterio para integrar IA en procesos reales.
+    </p>
+  </main>
+</body>
+</html>
