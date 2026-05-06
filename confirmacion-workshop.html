@@ -4,89 +4,189 @@
   <meta charset="UTF-8">
   <title>Confirmación | Lignum Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #FAFBFD;
-      color: #24324A;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #EAE3D9;
+      color: #10284E;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .box {
+      max-width: 580px;
+      width: 100%;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(16,40,78,0.1);
+      overflow: hidden;
+    }
+    .header {
+      background: #10284E;
+      padding: 36px 40px;
       text-align: center;
     }
-
-    .box {
-      max-width: 600px;
-      padding: 40px;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 20px 60px rgba(16,40,78,0.1);
+    .header h1 {
+      color: #EAE3D9;
+      font-size: 26px;
+      margin: 0 0 8px 0;
+      font-weight: 700;
     }
-
-    h1 {
-      color: #10284E;
-      font-size: 32px;
-      margin-bottom: 15px;
+    .header p {
+      color: #D2B57B;
+      margin: 0;
+      font-size: 15px;
     }
-
-    p {
-      margin-bottom: 15px;
+    .body {
+      padding: 36px 40px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .step-num {
+      background: #10284E;
+      color: #EAE3D9;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .step-text strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+    .step-text span {
+      font-size: 14px;
+      color: #666;
       line-height: 1.5;
     }
-
-    .highlight {
-      font-weight: bold;
+    .divider {
+      border: none;
+      border-top: 1px solid #E3E1E2;
+      margin: 28px 0;
     }
-
-    ul {
-      text-align: left;
-      margin-top: 20px;
+    .pago-box {
+      background: #EAE3D9;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .pago-box p {
+      margin: 0 0 6px 0;
+      font-size: 14px;
       color: #555;
     }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 22px;
+    .pago-box .precio {
+      font-size: 32px;
+      font-weight: 700;
+      color: #10284E;
+      margin: 0 0 4px 0;
+    }
+    .pago-box .iva {
+      font-size: 12px;
+      color: #888;
+      margin: 0 0 20px 0;
+    }
+    .btn-pago {
+      display: block;
       background: #D2B57B;
       color: #10284E;
-      border-radius: 999px;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      text-align: center;
     }
-
+    .nota {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+    .footer {
+      padding: 20px 40px;
+      text-align: center;
+      border-top: 1px solid #E3E1E2;
+    }
+    .footer a {
+      font-size: 13px;
+      color: #888;
+      text-decoration: none;
+    }
   </style>
 </head>
-
 <body>
-
   <div class="box">
-    <h1>Tu sesión ha sido confirmada</h1>
 
-    <p>Tu workshop <span class="highlight">Protocolo Gemini</span> ya está agendado.</p>
+    <div class="header">
+      <h1>Tu sesión está agendada</h1>
+      <p>Protocolo Gemini · Sesión individual · 3 horas</p>
+    </div>
 
-    <p>En los próximos minutos recibirás un correo con los detalles de acceso.</p>
+    <div class="body">
 
-    <ul>
-      <li>Revisa tu bandeja de entrada (y spam)</li>
-      <li>Agrega la sesión a tu calendario</li>
-      <li>Ten acceso a tu Gmail, Drive y Docs durante la sesión</li>
-    </ul>
+      <div class="step">
+        <div class="step-num">✓</div>
+        <div class="step-text">
+          <strong>Sesión agendada</strong>
+          <span>Recibirás un correo de confirmación con el enlace de acceso y los detalles de tu sesión.</span>
+        </div>
+      </div>
 
-<p style="margin-top:20px; color:#555;">
-La sesión tiene un valor de <strong>$7,000 MXN</strong>, 
-se confirmará el pago un día antes de la sesión.
-</p>
-    
-    <p class="highlight">Esto no es una clase. Es implementación directa.</p>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Confirma tu lugar con el pago</strong>
+          <span>El lugar queda reservado únicamente al completar el pago. Tienes 24 horas para hacerlo.</span>
+        </div>
+      </div>
 
-    <a href="https://lignum-group.com" class="btn">
-      Volver al sitio
-    </a>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Prepara tu entorno</strong>
+          <span>Ten acceso a tu Gmail, Drive y Docs durante la sesión. No necesitas preparar nada más.</span>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="pago-box">
+        <p>Protocolo Gemini · Pago único</p>
+        <div class="precio">$8,000 MXN</div>
+        <div class="iva">IVA incluido</div>
+        <a href="https://www.paypal.com/ncp/payment/CFXVTRKEV68S6" target="_blank" class="btn-pago">
+          Confirmar mi lugar — Pagar ahora
+        </a>
+      </div>
+
+      <p class="nota">
+        Aceptamos tarjeta de crédito, débito y PayPal.<br>
+        ¿Tienes dudas antes de pagar? Escríbenos por 
+        <a href="https://wa.me/525543518336?text=Hola%2C%20agendé%20el%20Protocolo%20Gemini%20y%20tengo%20una%20pregunta%20antes%20de%20pagar" style="color:#10284E; font-weight:600;">WhatsApp</a>.
+      </p>
+
+    </div>
+
+    <div class="footer">
+      <a href="https://lignum-group.com">lignum-group.com</a>
+    </div>
+
   </div>
-
 </body>
 </html>
