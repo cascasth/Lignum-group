@@ -255,6 +255,76 @@
       line-height: 1.1;
     }
 
+    .video-placeholder {
+      aspect-ratio: 16/9;
+      width: 100%;
+      border: 2px dashed rgba(16,40,78,0.35);
+      border-radius: var(--radius);
+      background: var(--ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .bio-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 24px;
+      background: white;
+      border: 1px solid #edf0f4;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(16,40,78,0.04);
+    }
+
+    .avatar-circle {
+      flex-shrink: 0;
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    .bio-card h3 {
+      margin: 0 0 2px;
+      color: var(--navy);
+      font-size: 1.15rem;
+    }
+
+    .bio-card .role {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .bio-card p.bio-desc {
+      margin: 0;
+      color: #47556e;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 560px) {
+      .bio-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
     footer {
       padding: 28px 0 46px;
       color: #667085;
@@ -296,7 +366,7 @@ src="https://www.facebook.com/tr?id=1582377683893515&ev=PageView&noscript=1"
     <div class="container">
       <div class="topbar">
         <div class="brand">Lignum</div>
-        <a href="#agenda" class="btn btn-secondary">Inscribirse</a>
+        <a href="#agenda" class="btn btn-secondary">Diagnóstico gratis</a>
       </div>
 
       <div class="hero-grid">
@@ -312,7 +382,7 @@ src="https://www.facebook.com/tr?id=1582377683893515&ev=PageView&noscript=1"
           </ul>
 
           <div class="cta-row">
-            <a href="#agenda" class="btn btn-primary">Reservar workshop</a>
+            <a href="#agenda" class="btn btn-primary">Agenda tu diagnóstico gratis</a>
             <a href="#incluye" class="btn btn-secondary">Ver qué incluye</a>
           </div>
         </div>
@@ -325,8 +395,9 @@ src="https://www.facebook.com/tr?id=1582377683893515&ev=PageView&noscript=1"
           <h2 style="margin:0; color:#10284E; font-size:1.55rem;">Protocolo Gemini</h2>
           <p style="margin:12px 0 16px; color:#59657d;">Una sesión práctica para transformar desorden operativo en un sistema más claro, rápido y usable.</p>
           <div class="price">$8,000 MXN</div>
-          <p style="margin:0 0 18px; color:#59657d;">Implementación inicial guiada para empresas y profesionales que ya trabajan con información crítica.</p>
-          <a href="#agenda" class="btn btn-primary" style="width:100%; text-align:center;">Quiero mi sesión</a>
+          <p style="margin:0 0 6px; color:#59657d;">Implementación inicial guiada para empresas y profesionales que ya trabajan con información crítica.</p>
+          <p style="margin:0 0 18px; color:#8b96a8; font-size:0.85rem;">El pago se realiza después de tu diagnóstico gratuito, no antes.</p>
+          <a href="#agenda" class="btn btn-primary" style="width:100%; text-align:center;">Agenda tu diagnóstico gratis</a>
           <div style="margin-top:20px; border-radius:12px; overflow:hidden;">
             <iframe 
               src="https://www.youtube.com/embed/az7TjyhORMc" 
@@ -339,6 +410,25 @@ src="https://www.facebook.com/tr?id=1582377683893515&ev=PageView&noscript=1"
       </div>
     </div>
   </header>
+
+  <section class="muted-bg">
+    <div class="container">
+      <h2 class="section-title">Conozca a su instructor</h2>
+      <p class="section-copy">Fernando le explica en un breve video de qué trata el Protocolo Gemini y cómo se aplica a su operación.</p>
+
+      <div class="video-placeholder">[VIDEO PENDIENTE]</div>
+
+      <!-- TODO: reemplazar por foto real de Fernando García -->
+      <div class="bio-card">
+        <div class="avatar-circle">FG</div>
+        <div>
+          <h3>Fernando García</h3>
+          <div class="role">Director Comercial</div>
+          <p class="bio-desc">Más de 20 años de experiencia en liderazgo comercial y de producto, hoy especializado en la implementación práctica de inteligencia artificial en operaciones empresariales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section>
     <div class="container">
@@ -483,21 +573,31 @@ src="https://www.facebook.com/tr?id=1582377683893515&ev=PageView&noscript=1"
     </div>
   </section>
 
+  <section>
+    <div class="container">
+      <h2 class="section-title">Inversión</h2>
+      <div class="offer-box" style="max-width:520px;">
+        <div class="tag">Sesión uno a uno · 3 horas</div>
+        <div class="price">$8,000 MXN</div>
+        <p style="margin:0; color:#47556e;">El pago se realiza <strong>después</strong> de tu llamada de diagnóstico gratuita, no antes. Primero validamos juntos si Protocolo Gemini es el paso correcto para su operación.</p>
+      </div>
+    </div>
+  </section>
+
 <section id="agenda">
   <div class="container">
     <div class="final-cta" style="max-width:700px; margin:0 auto; padding:30px;">
 <p style="color:#D2B57B; font-weight:700; font-size:1.3rem; text-align:center; margin-bottom:8px;">
   Solo quedan 6 lugares disponibles
 </p>
-      <h2>Empiece a ordenar su operación con IA útil, no con promesas vacías.</h2>
+      <h2>Agenda tu diagnóstico gratis con Fernando.</h2>
 
-      <p>Reserve su workshop Protocolo Gemini.</p>
-      <p>Registra tus datos, selecciona la fecha y realiza tu pago</p>
-      
-      <!-- FORMULARIO -->
-<a href="https://tally.so/r/Pd0B7b" target="_self" style="display:block !important; background-color:#D2B57B !important; color:#10284E !important; font-family:'Montserrat',sans-serif !important; font-size:18px !important; font-weight:700 !important; text-align:center !important; padding:20px 40px !important; border-radius:4px !important; text-decoration:none !important; max-width:400px !important; margin:0 auto !important;">
-  Registrarse al Workshop
-</a>
+      <p>Agenda una llamada breve y sin costo para revisar su operación y definir si Protocolo Gemini es el siguiente paso.</p>
+
+      <!-- TODO: reemplazar href por la URL real de la página de agendamiento -->
+      <a href="#agenda" class="btn btn-primary" style="display:block; text-align:center; max-width:400px; margin:20px auto 0; font-size:1.05rem; padding:16px 32px;">
+        Agenda tu diagnóstico gratis
+      </a>
 
     </div>
   </div>
