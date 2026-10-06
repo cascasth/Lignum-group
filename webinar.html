@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webinar gratuito | IA para empresas y negocios | Lignum</title>
+<meta name="description" content="Aprende a pasar de hacer preguntas en un chat a trabajar con IA de forma organizada, sustentada y revisable en tu empresa o negocio. Webinar gratuito en vivo, 17 de octubre.">
+<style>
+:root {
+  --azul:#10284E;
+  --marfil:#EAE3D9;
+  --blanco:#FAFBFD;
+  --gris:#E3E1E2;
+  --dorado:#D2B57B;
+  --texto:#172033;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Montserrat,Arial,sans-serif;color:var(--texto);background:var(--blanco);line-height:1.55}
+h1,h2,h3{font-family:Garamond,Georgia,serif;color:var(--azul);line-height:1.08;margin-top:0}
+h1{font-size:clamp(2.55rem,6vw,5.5rem);letter-spacing:-.035em;margin-bottom:22px}
+h2{font-size:clamp(2rem,4vw,3.55rem);margin-bottom:18px}
+h3{font-size:1.45rem}
+p{font-size:1.06rem}
+.wrap{width:min(1120px,90%);margin:auto}
+.hero{background:var(--azul);color:var(--blanco);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(210,181,123,.3);border-radius:50%;right:-120px;top:-100px}
+.hero h1,.hero h2{color:var(--blanco)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center;padding:72px 0}
+.logo{width:175px;max-height:76px;object-fit:contain;margin-bottom:48px}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--dorado);margin-bottom:18px}
+.lead{font-size:clamp(1.1rem,2vw,1.35rem);max-width:760px;color:#eef2f7}
+.meta{display:flex;gap:18px;flex-wrap:wrap;margin:30px 0;color:var(--marfil);font-weight:600}
+.btn{display:inline-block;background:var(--dorado);color:var(--azul);text-decoration:none;padding:16px 28px;border-radius:4px;font-weight:800;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.quote-card{border:1px solid rgba(255,255,255,.2);padding:34px;background:rgba(255,255,255,.05);backdrop-filter:blur(3px)}
+.quote-card p{font-family:Garamond,Georgia,serif;font-size:1.85rem;line-height:1.25;margin:0;color:white}
+section{padding:90px 0}
+.ivory{background:var(--marfil)}
+.blue{background:var(--azul);color:var(--blanco)}
+.blue h2,.blue h3{color:var(--blanco)}
+.intro{max-width:850px}
+.big{font-family:Garamond,Georgia,serif;font-size:clamp(1.55rem,3vw,2.25rem);color:var(--azul);line-height:1.25}
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-top:38px}
+.card{background:white;border:1px solid #dcdde0;padding:25px 22px;min-height:185px}
+.card .n{font-family:Garamond,Georgia,serif;color:var(--dorado);font-size:2rem}
+.method{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:36px}
+.method div{border-top:2px solid var(--dorado);padding:20px 10px 0}
+.method strong{display:block;font-family:Garamond,Georgia,serif;font-size:2.2rem;color:var(--dorado)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.checks{padding:0;list-style:none}
+.checks li{padding:12px 0 12px 30px;position:relative;border-bottom:1px solid rgba(16,40,78,.12)}
+.checks li:before{content:"✓";position:absolute;left:0;color:var(--dorado);font-weight:bold}
+.callout{border-left:4px solid var(--dorado);padding:8px 0 8px 24px;font-family:Garamond,Georgia,serif;font-size:1.65rem;color:var(--azul)}
+.formbox{background:white;color:var(--texto);padding:38px;box-shadow:0 18px 50px rgba(0,0,0,.16)}
+.formbox h3{font-size:2rem}
+label{display:block;font-size:.84rem;font-weight:700;margin:15px 0 6px}
+input,select{width:100%;padding:13px 12px;border:1px solid #bcc3cc;border-radius:3px;background:#fff;font:inherit}
+.formbox .btn{width:100%;margin-top:22px}
+.small{font-size:.78rem;color:#677181}
+.faq details{border-top:1px solid #c7c4bf;padding:20px 0}
+.faq summary{font-weight:700;cursor:pointer;color:var(--azul)}
+footer{background:#0b1d39;color:#cbd3de;padding:36px 0;font-size:.85rem}
+.center{text-align:center}
+.tag{display:inline-block;border:1px solid var(--dorado);color:var(--dorado);padding:7px 11px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:850px){
+ .hero-grid,.two{grid-template-columns:1fr;gap:36px}
+ .hero{min-height:auto}
+ .hero-grid{padding:48px 0 64px}
+ .quote-card{display:none}
+ .grid5,.method{grid-template-columns:1fr}
+ section{padding:65px 0}
+ .logo{margin-bottom:34px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <img class="logo" src="data:image/png;base64,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" alt="Lignum">
+   <div class="eyebrow">Webinar gratuito en vivo</div>
+   <h1>¿Tu empresa o negocio ya usa IA?</h1>
+   <p class="lead">Descubre qué necesita tu equipo para pasar de hacer preguntas en un chat a trabajar con información, documentos y criterios de forma organizada y confiable.</p>
+   <div class="meta"><span>17 de octubre</span><span>•</span><span>En vivo por Zoom</span><span>•</span><span>Sin costo</span></div>
+   <a class="btn" href="#registro">QUIERO PARTICIPAR</a>
+  </div>
+  <aside class="quote-card"><p>“La IA responde.<br>Tu proceso determina si esa respuesta sirve.”</p></aside>
+ </div>
+</header>
+
+<section class="ivory">
+ <div class="wrap intro">
+  <div class="eyebrow">El verdadero reto</div>
+  <h2>Una respuesta puede sonar perfecta… y aun así no servir.</h2>
+  <p>Tu equipo puede estar usando inteligencia artificial todos los días. Pero cuando una respuesta depende de <strong>un documento específico, la versión vigente de una política, los datos correctos de un cliente o un criterio interno</strong>, escribir un buen prompt puede no ser suficiente.</p>
+  <p class="big">Antes de pedirle a la IA una respuesta, hay que saber con qué información debe trabajar, qué fuente corresponde, qué hacer si falta un dato y quién valida el resultado.</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="eyebrow">Haz un pequeño diagnóstico</div>
+  <h2>¿Te resulta familiar alguna de estas situaciones?</h2>
+  <div class="grid5">
+   <div class="card"><span class="n">01</span><p>La información existe, pero hay que buscarla entre carpetas, archivos o documentos.</p></div>
+   <div class="card"><span class="n">02</span><p>Distintas personas consultan o utilizan la misma información de maneras diferentes.</p></div>
+   <div class="card"><span class="n">03</span><p>Hay documentos que cambian de versión y es importante saber cuál corresponde.</p></div>
+   <div class="card"><span class="n">04</span><p>Se llenan una y otra vez formatos similares con datos diferentes.</p></div>
+   <div class="card"><span class="n">05</span><p>Tu equipo ya usa ChatGPT, Gemini u otra IA, pero cada persona trabaja a su manera.</p></div>
+  </div>
+  <p class="callout" style="margin-top:42px">Si reconociste una o varias, este webinar te va a interesar.</p>
+ </div>
+</section>
+
+<section class="blue">
+ <div class="wrap">
+  <div class="eyebrow">Una forma práctica de trabajar</div>
+  <h2>No necesitas otro “prompt mágico”.</h2>
+  <p style="max-width:780px">Durante el webinar aprenderás a organizar una tarea con IA antes de pedirle que la ejecute. Conocerás la metodología <strong>SAVIA</strong> y la aplicarás a un caso concreto.</p>
+  <div class="method">
+   <div><strong>S</strong><b>Salida</b><br>¿Qué necesitas obtener?</div>
+   <div><strong>A</strong><b>Antecedentes</b><br>¿Qué datos y fuentes necesita la tarea?</div>
+   <div><strong>V</strong><b>Vía</b><br>¿Cómo debe realizarse el trabajo?</div>
+   <div><strong>I</strong><b>Instrucción</b><br>¿Qué hará la IA y cuáles son sus límites?</div>
+   <div><strong>A</strong><b>Acción validada</b><br>¿Qué debe comprobarse antes de usar el resultado?</div>
+  </div>
+ </div>
+</section>
+
+<section class="ivory">
+ <div class="wrap two">
+  <div>
+   <div class="eyebrow">No será solo teoría</div>
+   <h2>Vas a tomar decisiones sobre un caso realista.</h2>
+   <p>Verás qué cambia cuando una solicitud aparentemente sencilla depende de datos, documentos, versiones y criterios distintos.</p>
+   <p>Después exploraremos qué ocurre cuando esa misma tarea deja de ser ocasional y comienza a repetirse dentro de una organización.</p>
+   <p class="callout">Y verás una demostración de cómo este tipo de trabajo puede llevarse a un entorno privado de IA diseñado para operar con información y documentos de una organización.</p>
+  </div>
+  <div>
+   <h3>Este webinar es especialmente útil si…</h3>
+   <ul class="checks">
+    <li>Diriges una empresa, despacho, negocio o área de trabajo.</li>
+    <li>Tu equipo consulta documentos, políticas, expedientes, contratos o manuales de forma recurrente.</li>
+    <li>Preparan formatos o documentos similares usando datos que cambian en cada caso.</li>
+    <li>Ya utilizan IA y quieren llevarla de experimentos individuales a procesos más claros.</li>
+    <li>Quieres identificar qué tareas vale la pena organizar antes de automatizarlas.</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="registro">
+ <div class="wrap two">
+  <div>
+   <span class="tag">17 de octubre · Zoom</span>
+   <h2 style="margin-top:20px">Reserva tu lugar.</h2>
+   <p class="big">Aprende a pasar de una consulta aislada con IA a un flujo de trabajo sustentado, repetible y revisable.</p>
+   <p>La participación es gratuita. Al registrarte recibirás los datos de acceso al webinar.</p>
+   <p><strong>Importante:</strong> no necesitas compartir documentos ni información confidencial de tu empresa durante la sesión.</p>
+  </div>
+
+  <form class="formbox" id="leadForm" action="https://docs.google.com/forms/d/e/1FAIpQLScKrUWAspYoiFRMXh_v1yGmk2CUVfTl9FCuPOl4VFcCPtwjPw/formResponse" method="POST" target="hidden_iframe">
+   <h3>Registro al webinar</h3>
+   <label for="nombre">Nombre</label>
+   <input id="nombre" name="entry.1478138533" required>
+   <label for="email">Correo electrónico</label>
+   <input id="email" name="entry.1640178302" type="email" required>
+   <label for="empresa">Empresa o negocio</label>
+   <input id="empresa" name="entry.1424130876">
+   <label for="puesto">Puesto o función</label>
+   <input id="puesto" name="entry.303508640">
+   <label for="sector">Sector</label>
+   <input id="sector" name="entry.1114738642">
+   <label for="situacion">¿Qué sucede con mayor frecuencia en tu trabajo?</label>
+   <select id="situacion" name="entry.1152351961" required>
+    <option value="">Selecciona una opción</option>
+    <option>La información existe, pero hay que buscarla entre carpetas, archivos o documentos.</option>
+    <option>Se llenan una y otra vez formatos similares con datos diferentes.</option>
+    <option>Hay documentos que cambian de versión y es importante saber cuál corresponde.</option>
+    <option>Distintas personas consultan o utilizan la misma información de maneras diferentes.</option>
+    <option>Tu equipo ya utiliza ChatGPT, Gemini u otra IA, pero cada persona ha desarrollado su propia manera de trabajar.</option>
+   </select>
+   <button class="btn" type="submit">QUIERO PARTICIPAR</button>
+   <p class="small">Al registrarte aceptas recibir información relacionada con este webinar. Agrega aquí el enlace a tu Aviso de Privacidad.</p>
+   <p id="formMsg" class="small" style="display:none;font-weight:700;color:#10284E"></p>
+  </form>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="Envío de registro"></iframe>
+ </div>
+</section>
+
+<section class="ivory faq">
+ <div class="wrap" style="max-width:850px">
+  <div class="eyebrow">Preguntas frecuentes</div>
+  <h2>Antes de registrarte</h2>
+  <details><summary>¿Necesito conocimientos técnicos de inteligencia artificial?</summary><p>No. El webinar está enfocado en la lógica de trabajo y en cómo organizar una tarea para obtener resultados útiles y revisables.</p></details>
+  <details><summary>¿Es una demostración de software?</summary><p>No solamente. Primero trabajarás sobre un método aplicable a tareas con IA. Después verás una demostración de cómo ciertos procesos recurrentes pueden llevarse a un entorno privado.</p></details>
+  <details><summary>¿Tengo que compartir información de mi empresa?</summary><p>No. Los ejercicios se realizan con un caso preparado para la sesión. No compartas información confidencial durante el webinar.</p></details>
+  <details><summary>¿Tiene costo?</summary><p>No. Esta edición del webinar es gratuita y se realizará en vivo por Zoom.</p></details>
+ </div>
+</section>
+
+<section class="blue center">
+ <div class="wrap" style="max-width:820px">
+  <div class="eyebrow">Webinar gratuito</div>
+  <h2>La IA responde.<br>Tu proceso determina si esa respuesta sirve.</h2>
+  <p>17 de octubre · En vivo por Zoom</p>
+  <a class="btn" href="#registro">RESERVAR MI LUGAR</a>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap center">Lignum · Implementación estratégica de inteligencia artificial para empresas y negocios</div>
+</footer>
+
+<script>
+let formSubmitted = false;
+const form = document.getElementById('leadForm');
+const iframe = document.getElementById('hidden_iframe');
+const msg = document.getElementById('formMsg');
+
+form.addEventListener('submit', function(){
+  formSubmitted = true;
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'ENVIANDO…';
+});
+
+iframe.addEventListener('load', function(){
+  if (!formSubmitted) return;
+  msg.style.display = 'block';
+  msg.textContent = '¡Listo! Tu registro quedó recibido. Te compartiremos por correo la información de acceso al webinar.';
+  form.reset();
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = false;
+  btn.textContent = 'QUIERO PARTICIPAR';
+  formSubmitted = false;
+});
+</script>
+</body>
+</html>
