@@ -63,6 +63,13 @@ input,select{width:100%;padding:13px 12px;border:1px solid #bcc3cc;border-radius
 footer{background:#0b1d39;color:#cbd3de;padding:36px 0;font-size:.85rem}
 .center{text-align:center}
 .tag{display:inline-block;border:1px solid var(--dorado);color:var(--dorado);padding:7px 11px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+
+.visual-process{margin-top:42px;text-align:center}
+.visual-process img{display:block;width:100%;max-width:1120px;height:auto;margin:0 auto;border-radius:10px}
+.presenter{display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:center;margin-top:42px;padding-top:36px;border-top:1px solid #d4cfc7}
+.presenter img{width:220px;height:220px;object-fit:cover;border-radius:8px;display:block}
+.presenter h3{margin:0 0 10px}
+.presenter p{margin:0}
 @media(max-width:850px){
  .hero-grid,.two{grid-template-columns:1fr;gap:36px}
  .hero{min-height:auto}
@@ -71,6 +78,8 @@ footer{background:#0b1d39;color:#cbd3de;padding:36px 0;font-size:.85rem}
  .grid5,.method{grid-template-columns:1fr}
  section{padding:65px 0}
  .logo{margin-bottom:34px}
+ .presenter{grid-template-columns:1fr;text-align:center}
+ .presenter img{margin:0 auto;width:190px;height:190px}
 }
 </style>
 </head>
@@ -96,6 +105,7 @@ footer{background:#0b1d39;color:#cbd3de;padding:36px 0;font-size:.85rem}
   <h2>Una respuesta puede sonar perfecta… y aun así no servir.</h2>
   <p>Tu equipo puede estar usando inteligencia artificial todos los días. Pero cuando una respuesta depende de <strong>un documento específico, la versión vigente de una política, los datos correctos de un cliente o un criterio interno</strong>, escribir un buen prompt puede no ser suficiente.</p>
   <p class="big">Antes de pedirle a la IA una respuesta, hay que saber con qué información debe trabajar, qué fuente corresponde, qué hacer si falta un dato y quién valida el resultado.</p>
+  <div class="visual-process"><img src="images/dispersa.png" alt="De información dispersa a un resultado útil y verificable mediante criterios claros y un proceso con IA" loading="lazy"></div>
  </div>
 </section>
 
@@ -147,6 +157,14 @@ footer{background:#0b1d39;color:#cbd3de;padding:36px 0;font-size:.85rem}
     <li>Ya utilizan IA y quieren llevarla de experimentos individuales a procesos más claros.</li>
     <li>Quieres identificar qué tareas vale la pena organizar antes de automatizarlas.</li>
    </ul>
+  </div>
+  <div class="presenter" style="grid-column:1 / -1">
+   <img src="images/Fernando.png" alt="Fernando, presentador del webinar de Lignum" loading="lazy">
+   <div>
+    <div class="eyebrow">Sesión en vivo</div>
+    <h3>Una conversación práctica, guiada por Fernando.</h3>
+    <p>Durante la sesión irá del caso y la metodología a una demostración concreta, para que puedas distinguir qué puede resolverse con una conversación de IA y cuándo conviene estructurarlo como un proceso de trabajo.</p>
+   </div>
   </div>
  </div>
 </section>
