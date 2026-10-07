@@ -284,14 +284,24 @@ form.addEventListener('submit', function(){
 
 iframe.addEventListener('load', function(){
   if (!formSubmitted) return;
+
+  // Registrar conversión en Meta
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead');
+  }
+
   msg.style.display = 'block';
-  msg.textContent = '¡Listo! Tu registro quedó recibido. Te compartiremos por correo la información de acceso al webinar.';
+  msg.textContent = '¡Listo! Tu registro fue enviado. Revisa tu correo para encontrar la información de acceso al webinar. Si no lo encuentras, revisa Spam o Correo no deseado.';
+
   form.reset();
+
   const btn = form.querySelector('button[type="submit"]');
   btn.disabled = false;
   btn.textContent = 'QUIERO PARTICIPAR';
+
   formSubmitted = false;
 });
 </script>
+</body>
 </body>
 </html>
