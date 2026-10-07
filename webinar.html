@@ -311,6 +311,14 @@ iframe.addEventListener('load', function(){
   if (typeof fbq === 'function') {
     fbq('track', 'Lead');
   }
+  
+  // Registrar conversión en Google Analytics
+if (typeof gtag === 'function') {
+  gtag('event', 'generate_lead', {
+    event_category: 'webinar',
+    event_label: 'Webinar IA Octubre 2026'
+  });
+}
 
   msg.style.display = 'block';
  msg.innerHTML = '<strong style="font-size:20px;">¡Listo! Tu registro fue enviado.</strong><br><br>Te enviamos por correo el acceso al webinar. <strong>Revisa tu bandeja de entrada</strong> y, si no lo encuentras, revisa también Spam o Correo no deseado.';
