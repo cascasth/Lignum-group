@@ -302,7 +302,7 @@ iframe.addEventListener('load', function(){
   }
 
   msg.style.display = 'block';
-  msg.textContent = '¡Listo! Tu registro fue enviado. Revisa tu correo para encontrar la información de acceso al webinar. Si no lo encuentras, revisa Spam o Correo no deseado.';
+ msg.innerHTML = '<strong style="font-size:20px;">¡Listo! Tu registro fue enviado.</strong><br><br>Te enviamos por correo el acceso al webinar. <strong>Revisa tu bandeja de entrada</strong> y, si no lo encuentras, revisa también Spam o Correo no deseado.';
 
   form.reset();
 
