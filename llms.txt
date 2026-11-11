@@ -1,28 +1,24 @@
 # Lignum
 
-> Lignum acompaña a empresas en México con soluciones de inteligencia artificial aplicada, automatización de procesos, marketing digital y comunicación estratégica.
+> Lignum ofrece consultoría para la adopción de inteligencia artificial en empresas y servicios de marketing y comunicación estratégica en México.
 
 ## Sitio oficial
-- [Inicio](https://www.lignum-group.com/): presentación de Lignum, áreas de servicio y contacto.
-- [Inteligencia artificial para empresas](https://www.lignum-group.com/inteligencia-artificial.html): consultoría, implementación y tecnología aplicada a procesos empresariales.
-- [Marketing y comunicación estratégica](https://www.lignum-group.com/comunicacion-estrategica.html): estrategia de marca, marketing digital, redes sociales, contenido y desarrollo web.
-- [Nuestro enfoque](https://www.lignum-group.com/enfoque.html): forma de trabajo y principios.
-- [Protocolo Gemini](https://www.lignum-group.com/protocolo-gemini.html): información del taller y su propuesta.
+- [Inicio](https://www.lignum-group.com/): especialidades y contacto.
+- [Inteligencia artificial para empresas](https://www.lignum-group.com/inteligencia-artificial.html): diagnóstico de procesos, recomendaciones de adopción de IA y evaluación de MAIA según las necesidades.
+- [Marketing y comunicación estratégica](https://www.lignum-group.com/comunicacion-estrategica.html): posicionamiento, identidad, estrategia digital, contenidos, redes sociales, publicidad y sitios web.
+- [Nuestro enfoque](https://www.lignum-group.com/enfoque.html): recurso complementario.
+- [Protocolo Gemini](https://www.lignum-group.com/protocolo-gemini.html): información de un taller específico.
 
-## Servicios
-- Consultoría e implementación de inteligencia artificial para empresas.
-- Asistentes de IA y automatización de procesos.
-- Comunicación estratégica, identidad de marca y marketing digital.
-- Creación de contenido y desarrollo de sitios web.
-- Capacitación en inteligencia artificial y habilidades profesionales.
+## Servicios vigentes
+- Consultoría para identificar oportunidades y orientar la incorporación de IA en empresas.
+- Evaluación de MAIA, plataforma privada empresarial, cuando corresponde.
+- Estrategia de marca, marketing digital y comunicación estratégica.
+- Creación de contenido, redes sociales, campañas y sitios web según el alcance contratado.
 
-## A quién se dirige
-Empresas, equipos de trabajo y profesionales que buscan mejorar sus procesos, aprovechar la tecnología y comunicar con mayor claridad.
+## Alcance
+Lignum diagnostica y recomienda antes de proponer herramientas. No se presenta como desarrolladora general de software a medida. Los cursos pueden atenderse bajo solicitud, pero no son la línea comercial principal.
 
-## Ubicación y contacto
-- México; atención según el alcance de cada proyecto.
-- Sitio oficial: https://www.lignum-group.com/
-- Correo: atencion@lignum-group.com
-
-## Nota
-Los servicios se definen de acuerdo con las necesidades de cada cliente. Consultar las páginas oficiales para condiciones y disponibilidad vigentes.
+## Contacto
+- México.
+- https://www.lignum-group.com/
+- atencion@lignum-group.com
