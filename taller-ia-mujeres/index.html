@@ -52,52 +52,72 @@ dialog{border:none;border-radius:12px;max-width:500px;width:calc(100% - 30px);pa
 <div class="formcard"><h3>Reserva tu participación</h3><p style="color:var(--muted)">Selecciona una fecha y completa tus datos. Después elige cómo prefieres pagar.</p>
 <div class="field"><label>1. Elige una fecha</label><div class="datechoice"><label><input type="radio" name="fecha" value="Sábado 28 de noviembre de 2026, 10:00–12:00 (CDMX)" checked><b>Sábado 28 nov.</b><small>10:00–12:00 h · CDMX</small></label><label><input type="radio" name="fecha" value="Miércoles 2 de diciembre de 2026, 11:00–13:00 (CDMX)"><b>Miércoles 2 dic.</b><small>11:00–13:00 h · CDMX</small></label></div></div>
 <div class="field"><label for="nombre">2. Tu nombre</label><input id="nombre" autocomplete="name" placeholder="Nombre y apellido" required></div><div class="field"><label for="correo">3. Tu correo electrónico</label><input type="email" id="correo" autocomplete="email" placeholder="tucorreo@ejemplo.com" required></div><div class="field"><label for="telefono">4. Tu WhatsApp (opcional)</label><input id="telefono" type="tel" autocomplete="tel" placeholder="10 dígitos"></div><div class="field"><label for="interes">5. ¿Para qué te interesa la IA? (opcional)</label><select id="interes"><option value="">Selecciona si quieres compartirlo</option><option>Trabajo y desarrollo profesional</option><option>Emprendimiento o negocio</option><option>Organización y vida cotidiana</option><option>Curiosidad y aprendizaje</option></select></div>
-<p><strong>6. Elige cómo pagar</strong></p><div class="pays"><button type="button" onclick="openPay('PayPal')">Pagar con PayPal ↗</button><button id="oxxoButton" type="button" onclick="openPay('OXXO')">Depositar en OXXO ↗</button></div>
+<p><strong>6. Elige cómo pagar</strong></p><div class="pays"><button type="button" onclick="openPay('PayPal')">Pagar con PayPal ↗</button><button id="oxxoButton" type="button" onclick="openPay('OXXO')">Pagar en OXXO ↗</button></div>
 <div class="price-note" style="margin-top:16px"><strong>También puedes pagar por transferencia SPEI.</strong><br>Banco: STPS · Beneficiaria: Teresa Castañeda<br>CLABE: <strong id="clabe">728969000040207846</strong> <button type="button" onclick="copyClabe()" style="border:1px solid #9cbdc4;border-radius:4px;background:#fff;padding:3px 8px;cursor:pointer">Copiar</button><br><small>Transfiere el precio vigente mostrado arriba y envía el comprobante con tus datos y fecha elegida a <a href="mailto:atencion@lignum-group.com">atencion@lignum-group.com</a>.</small></div>
-<p class="notice">Los pagos se procesan fuera de este sitio. Tu lugar se confirma después de recibir tus datos y verificar el pago. No hay registro automático ni validación instantánea.</p></div></div></section>
+<p class="notice">Importante: tus datos no se guardan automáticamente. Envíalos por correo desde el siguiente paso y conserva el comprobante. El lugar se confirma cuando verificamos el pago.</p></div></div></section>
 <section class="section" id="instructores" style="background:#e9f0ef"><div class="container"><p class="kicker">Personas, no tutoriales impersonales</p><h2>Te acompañamos paso a paso.</h2><p class="lead">Dos perspectivas complementarias para mostrarte aplicaciones de IA que puedes llevar a tu propia realidad.</p><div class="profiles"><article class="profile"><img class="portrait" src="/images/Teresa.png" alt="Teresa Castañeda" loading="lazy"><h3>Teresa Castañeda</h3><p>Comunicación, diseño y aplicaciones creativas de IA. Explorarás cómo convertir una idea en algo concreto.</p></article><article class="profile"><img class="portrait" src="/images/Fernando.png" alt="Fernando García" loading="lazy"><h3>Fernando García</h3><p>IA aplicada a organización, productividad y procesos. Descubrirás usos prácticos para distintas tareas.</p></article></div></div></section>
 <section class="section" id="preguntas"><div class="container" style="max-width:850px"><p class="kicker">Resolvemos tus dudas</p><h2>¿Necesito saber algo antes?</h2><details><summary>¿Y si nunca he usado ChatGPT?</summary><p>¡Para eso es este taller! Empezamos desde lo básico y practicamos juntas.</p></details><details><summary>¿Necesito contratar una herramienta de pago?</summary><p>No. Usaremos principalmente funciones gratuitas de ChatGPT. Algunas tienen límites de uso; mostraremos alternativas.</p></details><details><summary>¿Puedo tomarlo solo con mi celular?</summary><p>Sí, aunque contar con otro dispositivo para seguir la clase y practicar facilita el aprendizaje.</p></details><details><summary>¿Cómo se confirma mi inscripción?</summary><p>Después de pagar, envía tu nombre, correo, fecha elegida y comprobante a atencion@lignum-group.com. Al verificar el pago te enviaremos la confirmación y los datos de acceso.</p></details><details><summary>¿Es seguro compartir información con IA?</summary><p>Explicaremos qué información personal o confidencial no conviene introducir y cómo revisar respuestas.</p></details><details><summary>¿Se grabará la clase? ¿Puedo cancelar?</summary><p>La grabación no está incluida. Si necesitas cancelar o cambiar de fecha, escríbenos antes de la sesión a atencion@lignum-group.com para revisar tu caso y las condiciones aplicables.</p></details><div style="margin-top:30px"><a class="btn dark" href="#inscripcion">Elegir fecha y reservar →</a></div></div></section>
 </main><footer><div class="container foot"><span>© 2026 Lignum · Taller Express IA para mujeres de 40+</span><span><a href="/">Sitio de Lignum</a> · <a href="mailto:atencion@lignum-group.com">Contacto</a></span></div></footer>
 <div class="sticky"><span><b id="stickyPrice">$199 MXN</b><br><small>2 horas en vivo</small></span><a href="#inscripcion" class="btn">Elegir fecha</a></div>
-<dialog id="paymentDialog"><button class="close" onclick="document.getElementById('paymentDialog').close()" aria-label="Cerrar">×</button><p class="kicker">Último paso de tu inscripción</p><h3 id="modalTitle">Confirmar tus datos</h3><p id="modalBody"></p><p class="notice" style="margin-bottom:16px">Tu pago no registra automáticamente tus datos. Envíalos por correo y después realiza el pago. Para depósito o transferencia, adjunta también el comprobante.</p><div style="display:flex;gap:9px;flex-wrap:wrap"><a class="btn dark" id="sendData" href="#">1. Enviar mis datos por correo</a><a class="btn" id="payLink" target="_blank" rel="noopener noreferrer">2. Ir a pagar ↗</a></div><p class="notice">Si no se abre tu aplicación de correo, copia los datos y envíalos a <a href="mailto:atencion@lignum-group.com">atencion@lignum-group.com</a>.</p><button style="margin-top:10px;cursor:pointer" onclick="copyDetails()">Copiar datos de inscripción</button></dialog>
+<dialog id="paymentDialog"><button class="close" onclick="document.getElementById('paymentDialog').close()" aria-label="Cerrar">×</button><p class="kicker">Último paso de tu inscripción</p><h3 id="modalTitle">Confirmar tus datos</h3><p id="modalBody"></p><p class="notice" style="margin-bottom:16px">Primero envía tus datos por correo y después realiza el pago. Para OXXO o transferencia, envía el comprobante al mismo correo para confirmar tu lugar.</p><div style="display:flex;gap:9px;flex-wrap:wrap"><a class="btn dark" id="sendData" href="#">1. Enviar mis datos por correo</a><a class="btn" id="payLink" target="_blank" rel="noopener noreferrer">2. Ir a pagar ↗</a></div><p class="notice">Si no se abre tu aplicación de correo, copia los datos y envíalos a <a href="mailto:atencion@lignum-group.com">atencion@lignum-group.com</a>.</p><button style="margin-top:10px;cursor:pointer" onclick="copyDetails()">Copiar datos de inscripción</button></dialog>
 <script>
-const deadline=new Date('2026-11-27T00:00:00-06:00'),paypalLinks={199:'https://www.paypal.com/ncp/payment/QZSNKLWVUQC5J',299:'https://www.paypal.com/ncp/payment/6FMEYP2CKYZ48'},oxxo199='https://app.spinbyoxxo.com.mx/deposito/VZEs0OrG';
-const current=new Date(),promo=current<deadline,price=promo?199:299;
-document.getElementById('priceDisplay').innerHTML='$'+price+' <small style="font:700 1.1rem DM Sans,sans-serif">MXN</small>';
-document.getElementById('stickyPrice').textContent='
-if(!promo){document.getElementById('priceDescription').textContent='Precio de inscripción a esta edición. La promoción de $199 terminó el jueves 26 de noviembre de 2026.';document.getElementById('oxxoButton').disabled=true;document.getElementById('oxxoButton').textContent='OXXO: enlace pendiente';document.getElementById('oxxoButton').title='El enlace OXXO para $299 aún no está disponible. Puedes usar PayPal o transferencia SPEI.'}
-let registration='';
-function copyClabe(){navigator.clipboard?.writeText(document.getElementById('clabe').textContent).then(()=>alert('CLABE copiada'))}
-function copyDetails(){if(navigator.clipboard){navigator.clipboard.writeText(registration).then(()=>alert('Datos copiados. Envíalos a atencion@lignum-group.com')).catch(()=>alert(registration))}else{alert(registration)}}
-function openPay(method){
- const name=document.getElementById('nombre').value.trim(),email=document.getElementById('correo').value.trim(),emailEl=document.getElementById('correo');
- if(!name||!email||!emailEl.checkValidity()){const el=document.getElementById(!name?'nombre':'correo');el.focus();el.reportValidity();return}
- if(method==='OXXO'&&!promo)return;
- const fecha=document.querySelector('[name=fecha]:checked').value,phone=document.getElementById('telefono').value.trim(),interes=document.getElementById('interes').value;
- registration='Inscripción taller IA para mujeres de 40+ - Lignum\nNombre: '+name+'\nCorreo: '+email+'\nWhatsApp: '+(phone||'No proporcionado')+'\nFecha: '+fecha+'\nInterés: '+(interes||'No indicado')+'\nMétodo de pago: '+method+'\nImporte: $'+price+' MXN';
- document.getElementById('modalTitle').textContent='Inscripción por '+method+' · $'+price+' MXN';
- document.getElementById('modalBody').textContent='Elegiste: '+fecha+'. Verifica tu información y envíala por correo para que podamos asociar tu pago a la inscripción.';
- document.getElementById('sendData').href='mailto:atencion@lignum-group.com?subject='+encodeURIComponent('Inscripción taller IA 40+ | '+name)+'&body='+encodeURIComponent(registration+'\n\nAdjunto comprobante de pago cuando lo tenga.');
- document.getElementById('payLink').href=method==='PayPal'?paypalLinks[price]:oxxo199;
- document.getElementById('paymentDialog').showModal();
+(function(){
+'use strict';
+const deadline = new Date('2026-11-27T00:00:00-06:00');
+const paypalLinks = {199:'https://www.paypal.com/ncp/payment/QZSNKLWVUQC5J',299:'https://www.paypal.com/ncp/payment/6FMEYP2CKYZ48'};
+const oxxo199 = 'https://app.spinbyoxxo.com.mx/deposito/VZEs0OrG';
+const promo = Date.now() < deadline.getTime(), price = promo ? 199 : 299;
+const byId = id => document.getElementById(id);
+byId('priceDisplay').innerHTML='$'+price+' <small style="font:700 1.1rem DM Sans,sans-serif">MXN</small>';
+byId('stickyPrice').textContent='$'+price+' MXN';
+byId('heroPrice').textContent=promo?'Introducción: $199 MXN':'Inscripción: $299 MXN';
+byId('heroDeadline').textContent=promo?'Pagando hasta el 26 de noviembre':'Sujeto a disponibilidad';
+if(!promo){
+  byId('priceDescription').textContent='Precio de inscripción a esta edición. La promoción de $199 terminó el jueves 26 de noviembre de 2026.';
+  byId('oxxoButton').disabled=true;
+  byId('oxxoButton').textContent='OXXO: enlace de $299 pendiente';
+  byId('oxxoButton').title='El enlace OXXO de $299 aún no está disponible. Puedes usar PayPal o transferencia SPEI.';
 }
-</script></body></html>+price+' MXN';
-document.getElementById('heroPrice').textContent=promo?'Introducción: $199 MXN':'Inscripción: $299 MXN';
-document.getElementById('heroDeadline').textContent=promo?'Pagando hasta el 26 de noviembre':'Sujeto a disponibilidad';
-if(!promo){document.getElementById('priceDescription').textContent='Precio de inscripción a esta edición. La promoción de $199 terminó el jueves 26 de noviembre de 2026.';document.getElementById('oxxoButton').disabled=true;document.getElementById('oxxoButton').textContent='OXXO: enlace pendiente';document.getElementById('oxxoButton').title='El enlace OXXO para $299 aún no está disponible. Puedes usar PayPal o transferencia SPEI.'}
-let registration='';
-function copyClabe(){navigator.clipboard?.writeText(document.getElementById('clabe').textContent).then(()=>alert('CLABE copiada'))}
-function copyDetails(){if(navigator.clipboard){navigator.clipboard.writeText(registration).then(()=>alert('Datos copiados. Envíalos a atencion@lignum-group.com')).catch(()=>alert(registration))}else{alert(registration)}}
-function openPay(method){
- const name=document.getElementById('nombre').value.trim(),email=document.getElementById('correo').value.trim(),emailEl=document.getElementById('correo');
- if(!name||!email||!emailEl.checkValidity()){const el=document.getElementById(!name?'nombre':'correo');el.focus();el.reportValidity();return}
- if(method==='OXXO'&&!promo)return;
- const fecha=document.querySelector('[name=fecha]:checked').value,phone=document.getElementById('telefono').value.trim(),interes=document.getElementById('interes').value;
- registration='Inscripción taller IA para mujeres de 40+ - Lignum\nNombre: '+name+'\nCorreo: '+email+'\nWhatsApp: '+(phone||'No proporcionado')+'\nFecha: '+fecha+'\nInterés: '+(interes||'No indicado')+'\nMétodo de pago: '+method+'\nImporte: $'+price+' MXN';
- document.getElementById('modalTitle').textContent='Inscripción por '+method+' · $'+price+' MXN';
- document.getElementById('modalBody').textContent='Elegiste: '+fecha+'. Verifica tu información y envíala por correo para que podamos asociar tu pago a la inscripción.';
- document.getElementById('sendData').href='mailto:atencion@lignum-group.com?subject='+encodeURIComponent('Inscripción taller IA 40+ | '+name)+'&body='+encodeURIComponent(registration+'\n\nAdjunto comprobante de pago cuando lo tenga.');
- document.getElementById('payLink').href=method==='PayPal'?paypalLinks[price]:oxxo199;
- document.getElementById('paymentDialog').showModal();
+let registration = '';
+function fallbackCopy(text,success){
+  const area=document.createElement('textarea');
+  area.value=text;area.style.position='fixed';area.style.top='0';area.style.left='0';area.style.opacity='0';
+  document.body.appendChild(area);area.focus();area.select();
+  let ok=false;
+  try{ok=document.execCommand('copy')}catch(e){}
+  area.remove();
+  if(ok)alert(success);else prompt('Copia el texto:',text);
 }
+async function copyText(text,success){
+  if(navigator.clipboard && window.isSecureContext){
+    try{await navigator.clipboard.writeText(text);alert(success);return}catch(e){}
+  }
+  fallbackCopy(text,success);
+}
+window.copyClabe=function(){
+  copyText(byId('clabe').textContent.trim(),'CLABE copiada');
+};
+window.copyDetails=function(){
+  if(registration)copyText(registration,'Datos de inscripción copiados');
+};
+window.openPay=function(method){
+  const name=byId('nombre').value.trim(),emailField=byId('correo'),email=emailField.value.trim();
+  if(!name){byId('nombre').focus();alert('Escribe tu nombre para preparar la inscripción.');return}
+  if(!email || !emailField.checkValidity()){emailField.focus();alert('Escribe un correo electrónico válido.');return}
+  if(method==='OXXO'&&!promo)return;
+  const fecha=document.querySelector('input[name="fecha"]:checked').value;
+  const phone=byId('telefono').value.trim(),interes=byId('interes').value;
+  registration='Inscripción taller IA para mujeres de 40+ - Lignum\nNombre: '+name+'\nCorreo: '+email+
+    '\nWhatsApp: '+(phone||'No proporcionado')+'\nFecha: '+fecha+
+    '\nInterés: '+(interes||'No indicado')+'\nMétodo de pago: '+method+'\nImporte: $'+price+' MXN';
+  byId('modalTitle').textContent='Pagar con '+method+' · $'+price+' MXN';
+  byId('modalBody').textContent='Elegiste '+fecha+'. Envía tus datos al correo de Lignum y realiza tu pago. Te confirmaremos tu lugar tras verificarlo.';
+  byId('sendData').href='mailto:atencion@lignum-group.com?subject='+
+    encodeURIComponent('Inscripción taller IA 40+ | '+name)+'&body='+
+    encodeURIComponent(registration+'\n\nEnviaré mi comprobante de pago por este medio.');
+  byId('payLink').href=method==='PayPal'?paypalLinks[price]:oxxo199;
+  byId('payLink').textContent=method==='PayPal'?'2. Abrir PayPal ↗':'2. Abrir pago OXXO ↗';
+  byId('paymentDialog').showModal();
+};
+})();
 </script></body></html>
