@@ -41,6 +41,9 @@ dialog{border:none;border-radius:12px;max-width:500px;width:calc(100% - 30px);pa
 .close{float:right;background:none;border:0;font-size:1.5rem;cursor:pointer}.sticky{display:none}
 @media(max-width:820px){.navlinks a:not(.btn){display:none}.hero-inner{grid-template-columns:1fr;padding-top:45px;padding-bottom:70px}.hero h1{font-size:clamp(3.3rem,12vw,5.6rem)}.art{min-height:270px;max-width:360px;margin:auto;width:100%}.orbit{width:280px}.symbol{font-size:13rem}.sticker{font-size:.75rem}.strip-in{grid-template-columns:1fr;gap:14px}.section{padding:65px 0}.grid3,.steps,.signup{grid-template-columns:1fr}.signup{gap:24px}.sticky{display:flex;align-items:center;justify-content:space-between;background:#06233a;color:white;padding:9px 15px;position:fixed;bottom:0;left:0;right:0;z-index:8;box-shadow:0 -6px 25px #0003}.sticky .btn{padding:11px 16px;font-size:.85rem}footer{padding-bottom:80px}}
 @media(max-width:480px){.container{padding:0 19px}.nav{min-height:72px}.logo{width:100px}.datechoice,.profiles{grid-template-columns:1fr}.formcard{padding:21px}.pays{grid-template-columns:1fr}}
+.google-form-embed{width:100%;overflow:hidden;border:1px solid var(--border);border-radius:10px;background:#fff;margin:14px 0 8px}
+.google-form-embed iframe{display:block;width:100%;min-height:780px;border:0}
+@media(max-width:680px){.google-form-embed iframe{min-height:900px}}
 </style></head><body>
 <header class="top"><div class="container nav"><a href="/" aria-label="Lignum inicio"><img class="logo" src="/images/Logo_blanco.png" alt="Lignum"></a><nav class="navlinks"><a href="#aprender">Lo que aprenderás</a><a href="#instructores">Instructores</a><a href="#preguntas">Preguntas</a><a href="#inscripcion" class="btn">Elegir mi fecha</a></nav></div></header>
 <main>
@@ -52,9 +55,11 @@ dialog{border:none;border-radius:12px;max-width:500px;width:calc(100% - 30px);pa
 <div class="formcard"><h3>Reserva tu participación</h3>
 <p style="color:var(--muted)">Son dos pasos sencillos: registra tus datos y después realiza tu pago.</p>
 <p><strong>1. Registra tu lugar</strong></p>
-<p class="notice">En Google Forms elige la fecha del taller, escribe tus datos y selecciona tu método de pago. Al terminar, regresa a esta página para efectuarlo.</p>
-<a class="btn dark" href="https://forms.gle/mqDLq2cQz79Zi2C37" target="_blank" rel="noopener noreferrer" style="display:inline-block;text-align:center;text-decoration:none">Completar inscripción en Google Forms ↗</a>
-<p class="notice">Tu registro se guarda al enviar el formulario. La participación queda confirmada una vez que verifiquemos el pago.</p>
+<p class="notice">Elige la fecha, completa tus datos y pulsa «Enviar» en el formulario. Tus respuestas se guardan automáticamente en nuestro registro.</p>
+<div class="google-form-embed">
+  <iframe title="Formulario de inscripción al taller IA para mujeres de 40+" src="https://forms.gle/mqDLq2cQz79Zi2C37" width="100%" height="780" loading="eager" referrerpolicy="strict-origin-when-cross-origin">Cargando formulario de inscripción…</iframe>
+</div>
+<p class="notice">Si no puedes ver el formulario, <a href="https://forms.gle/mqDLq2cQz79Zi2C37" target="_blank" rel="noopener noreferrer">ábrelo aquí</a>. Al enviarlo, baja al paso 2 para pagar. Tu lugar queda confirmado cuando verifiquemos el pago.</p>
 <p style="margin:24px 0 10px"><strong>2. Realiza tu pago</strong></p>
 <div class="pays">
 <a id="paypalDirect" class="btn" href="https://www.paypal.com/ncp/payment/QZSNKLWVUQC5J" target="_blank" rel="noopener noreferrer">Pagar con PayPal ↗</a>
