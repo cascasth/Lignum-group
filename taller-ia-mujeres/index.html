@@ -133,6 +133,9 @@ window.openPay=async function(method){
  const selected=document.querySelector('input[name="fecha"]:checked').value;
  const fecha=selected.startsWith('Sábado')?'Sábado 28 nov 2026 10:00':'Miércoles 2 dic 2026 11:00';
  const phone=byId('telefono').value.trim(),interes=byId('interes').value;
+ const key=email.toLowerCase()+'|'+fecha;
+ if(!ids.has(key))ids.set(key,crypto.randomUUID());
+ const id=ids.get(key);
  registration='Folio: '+id+'\nInscripción taller IA para mujeres de 40+ - Lignum\nNombre: '+name+'\nCorreo: '+email+
    '\nWhatsApp: '+(phone||'No proporcionado')+'\nFecha: '+selected+
    '\nInterés: '+(interes||'No indicado')+'\nMétodo de pago: '+method+'\nImporte: $'+price+' MXN';
@@ -146,9 +149,6 @@ window.openPay=async function(method){
   payLink.textContent=method==='PayPal'?'Abrir PayPal ↗':'Abrir pago en OXXO ↗';
  }
  const status=byId('registrationStatus');
- const key=email.toLowerCase()+'|'+fecha;
- if(!ids.has(key))ids.set(key,crypto.randomUUID());
- const id=ids.get(key);
  status.textContent='Guardando y verificando los datos en Google Sheets...';
  byId('sendData').style.display='none';
  byId('payLink').style.display='none';
