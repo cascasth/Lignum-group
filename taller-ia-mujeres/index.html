@@ -89,7 +89,7 @@ if(!promo){
  byId('oxxoButton').title='El enlace de OXXO para $299 aún no está disponible. Puedes usar PayPal o transferencia SPEI.';
 }
 let registration='';
-const alreadySent=new Set();
+const ids=new Map();
 let busy=false;
 function copyFallback(value,success){
  const field=document.createElement('textarea');field.value=value;field.style.position='fixed';field.style.opacity='0';
@@ -103,6 +103,27 @@ async function copyText(value,success){
 }
 window.copyClabe=function(){copyText(byId('clabe').textContent.trim(),'CLABE copiada')};
 window.copyDetails=function(){if(registration)copyText(registration,'Datos copiados')};
+
+function verify(id){
+ return new Promise(resolve=>{
+  const cb='LignumCb_'+Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2);
+  const node=document.createElement('script');let ended=false;
+  const finish=ok=>{if(ended)return;ended=true;clearTimeout(timer);delete window[cb];node.remove();resolve(ok)};
+  window[cb]=data=>finish(!!(data&&data.encontrado));
+  node.onerror=()=>finish(false);
+  node.src=ENDPOINT+'?id='+encodeURIComponent(id)+'&callback='+cb+'&t='+Date.now();
+  const timer=setTimeout(()=>finish(false),6500);
+  document.head.appendChild(node);
+ });
+}
+async function waitForSaved(id){
+ for(const ms of [300,800,1300]){
+  await new Promise(done=>setTimeout(done,ms));
+  if(await verify(id))return true;
+ }
+ return false;
+}
+
 window.openPay=async function(method){
  if(busy)return;
  const name=byId('nombre').value.trim(),emailField=byId('correo'),email=emailField.value.trim();
@@ -112,7 +133,7 @@ window.openPay=async function(method){
  const selected=document.querySelector('input[name="fecha"]:checked').value;
  const fecha=selected.startsWith('Sábado')?'Sábado 28 nov 2026 10:00':'Miércoles 2 dic 2026 11:00';
  const phone=byId('telefono').value.trim(),interes=byId('interes').value;
- registration='Inscripción taller IA para mujeres de 40+ - Lignum\nNombre: '+name+'\nCorreo: '+email+
+ registration='Folio: '+id+'\nInscripción taller IA para mujeres de 40+ - Lignum\nNombre: '+name+'\nCorreo: '+email+
    '\nWhatsApp: '+(phone||'No proporcionado')+'\nFecha: '+selected+
    '\nInterés: '+(interes||'No indicado')+'\nMétodo de pago: '+method+'\nImporte: $'+price+' MXN';
  const subject='Inscripción taller IA 40+ | '+name;
@@ -126,20 +147,30 @@ window.openPay=async function(method){
  }
  const status=byId('registrationStatus');
  const key=email.toLowerCase()+'|'+fecha;
- status.textContent='Enviando solicitud de registro...';
+ if(!ids.has(key))ids.set(key,crypto.randomUUID());
+ const id=ids.get(key);
+ status.textContent='Guardando y verificando los datos en Google Sheets...';
+ byId('sendData').style.display='none';
+ byId('payLink').style.display='none';
  byId('paymentDialog').showModal();
- if(alreadySent.has(key)){status.textContent='Ya enviaste una solicitud con este correo y fecha en esta visita. No es necesario repetirla; continúa con el pago.';return}
  busy=true;
- const data=new URLSearchParams({nombre:name,correo:email,whatsapp:phone,fecha,interes,metodo,importe:String(price),sitio_web:''});
+ const data=new URLSearchParams({id,nombre:name,correo:email,whatsapp:phone,fecha,interes,metodo,importe:String(price),sitio_web:''});
  try{
-   // Apps Script no habilita CORS para leer la respuesta desde GitHub Pages.
-   // no-cors permite enviar los datos, pero no confirma que el servidor los haya guardado.
    await fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data,redirect:'follow'});
-   alreadySent.add(key);
-   status.textContent='Solicitud enviada al registro. El pago y la inscripción aún requieren verificación de Lignum.';
- }catch(err){
-   status.textContent='No pudimos asegurar el envío de tus datos. Usa «Enviar información por correo» antes de pagar.';
-   byId('sendData').textContent='Enviar mis datos por correo (necesario)';
+   const saved=await waitForSaved(id);
+   if(saved){
+     status.textContent='Registro recibido. Falta completar y verificar tu pago para confirmar tu lugar.';
+     if(method==='SPEI'){byId('sendData').textContent='Enviar comprobante por correo';byId('sendData').style.display='inline-flex'}
+     else{byId('payLink').style.display='inline-flex'}
+   }else{
+     status.textContent='No pudimos confirmar el registro. No realices el pago todavía: envíanos tus datos por correo.';
+     byId('sendData').textContent='Enviar datos por correo';
+     byId('sendData').style.display='inline-flex';
+   }
+ }catch(error){
+   status.textContent='No fue posible conectar con el registro. No pagues todavía; envía tus datos por correo.';
+   byId('sendData').textContent='Enviar datos por correo';
+   byId('sendData').style.display='inline-flex';
  }finally{busy=false}
 };
 })();
